@@ -1,3 +1,4 @@
+@inherits StatiqRazorPage<IDocument>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,12 +11,10 @@
     <body class="bg-gray-100">
         <main class="mx-auto container">
             <h2 class="text-2xl font-semibold">
-                My First Statiq Page
+                @Model.GetString("Title")
             </h2>
             <article class="">
-                <h1 id="hello-world">Hello World!</h1>
-<p>Hello from my first statiq page</p>
-
+                @RenderBody()
             </article>
         </main>
     </body>
