@@ -5,9 +5,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-     <title>chandu - My First Statiq Page</title>
+     <title>chandu - Serverless-FaaS use cases</title>
 
-     <link rel="canonical" href="/">
+     <link rel="canonical" href="/posts/serverlessusecases">
 
         <link type="application/rss+xml" rel="alternate" href="/feed.rss" />
         <link type="application/atom+xml" rel="alternate" href="/feed.atom" />
@@ -16,9 +16,9 @@
   <meta name="msapplication-tooltip" content="chandu" />
   <meta name="msapplication-starturl" content="/" />
 
-  <meta property="og:title" content="chandu - My First Statiq Page" />
+  <meta property="og:title" content="chandu - Serverless-FaaS use cases" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/" />
+  <meta property="og:url" content="/posts/serverlessusecases" />
   
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -92,9 +92,28 @@
 
 
 
-        My First Statiq Page
-        <h1 id="hello-world">Hello World!</h1>
-<p>Hello from my first statiq page</p>
+        Serverless-FaaS use cases
+        <h1 id="serverless-usecases">Serverless UseCases.</h1>
+<h2 id="some-use-cases-of-serverless-computing">some Use cases of serverless computing.</h2>
+<p><strong>Batch processing</strong> an offline system, Batch processing takes a large amount of data at once and runs a bunch of jobs on it, In this scenario usually, the user will not wait for any sort of response back from the server, Jobs are scheduled and run in periodically Maybe we replace expanse on extract-transform-load(ETL)</p>
+<p><a href="https://imgur.com/H65RZ70"><img src="https://i.imgur.com/H65RZ70.png" title="source: imgur.com" /></a></p>
+<p><strong>Infrastructure automation</strong> IT-ops can automate scheduled jobs, monitor network changes, use triggers  and events for verse different systems.</p>
+<p><a href="https://imgur.com/UQdm3lQ"><img src="https://i.imgur.com/UQdm3lQ.png" title="source: imgur.com" /></a></p>
+<p><strong>Stream processing</strong> an online/offline system, it is also called nearline processing. just like batch processing system, stream processing takes input and produces output. But stream processing works on events where batch processing. Stream processing builds upon batch jobs.</p>
+<p>Today we use serverless managed services that process event streams since functions typically stateless in many platforms we can't do windowing and operations like that. There are great managed services for stream processing today in the cloud that require no infrastructure. No complexity.</p>
+<p><a href="https://imgur.com/MP9vnnz"><img src="https://i.imgur.com/MP9vnnz.png" title="source: imgur.com" /></a></p>
+<p><strong>3 - tier web apps</strong> or often SPA or sites that talk to serverless storage. Only invoked and run when someone uses it. a typical 3 tier web app</p>
+<p><a href="https://imgur.com/SrvMjnk"><img src="https://i.imgur.com/SrvMjnk.png" title="source: imgur.com" /></a></p>
+<p><strong>Web APIs</strong> are a great option, easy to build web api  data and query systems and do simple calculations, release and deploy without setting up any infrastructure.</p>
+<p><a href="https://imgur.com/up5275z"><img src="https://i.imgur.com/up5275z.png" title="source: imgur.com" /></a></p>
+<p>AI and machine learning Data crunching, just like stream and batch processing.</p>
+<h3 id="further-reading">Further reading</h3>
+<p><strong>Azure Serverless</strong> <a href="https://docs.microsoft.com/en-us/dotnet/architecture/serverless/serverless-business-scenarios">business senarios</a>.</p>
+<p><strong>Amazon AWS</strong> <a href="https://docs.aws.amazon.com/lambda/latest/dg/stepfunctions-patterns.html">step functions</a>,
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html">lambda services</a></p>
+<p><strong>Google Cloud</strong> <a href="https://cloud.google.com/functions/#section-6">functions</a></p>
+<h2 id="summary">summary</h2>
+<p>serverless functions are cheap and useful they have many use cases, Even though they are stateless and has a cold start time, The technology is still getting maturing at the time of this blog is published. Amazon is adding a lot of research on this area.</p>
 
 
          <footer class="flexm flex-row bg-blue-300 text-center">

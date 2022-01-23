@@ -1,11 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title />
 		<link>/</link>
 		<description />
 		<copyright>2022</copyright>
-		<pubDate>Sun, 23 Jan 2022 17:49:38 GMT</pubDate>
-		<lastBuildDate>Sun, 23 Jan 2022 17:49:38 GMT</lastBuildDate>
+		<pubDate>Sun, 23 Jan 2022 18:20:04 GMT</pubDate>
+		<lastBuildDate>Sun, 23 Jan 2022 18:20:04 GMT</lastBuildDate>
+		<item>
+			<title>Serverless-FaaS use cases</title>
+			<link>/posts/serverlessusecases</link>
+			<description>&lt;p&gt;&lt;strong&gt;Batch processing&lt;/strong&gt; an offline system, Batch processing takes a large amount of data at once and runs a bunch of jobs on it, In this scenario usually, the user will not wait for any sort of response back from the server, Jobs are scheduled and run in periodically Maybe we replace expanse on extract-transform-load(ETL)&lt;/p&gt;</description>
+			<guid isPermaLink="false">/posts/serverlessusecases</guid>
+			<pubDate>Sat, 16 Jan 2021 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="serverless-usecases"&gt;Serverless UseCases.&lt;/h1&gt;
+&lt;h2 id="some-use-cases-of-serverless-computing"&gt;some Use cases of serverless computing.&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Batch processing&lt;/strong&gt; an offline system, Batch processing takes a large amount of data at once and runs a bunch of jobs on it, In this scenario usually, the user will not wait for any sort of response back from the server, Jobs are scheduled and run in periodically Maybe we replace expanse on extract-transform-load(ETL)&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/H65RZ70"&gt;&lt;img src="https://i.imgur.com/H65RZ70.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Infrastructure automation&lt;/strong&gt; IT-ops can automate scheduled jobs, monitor network changes, use triggers  and events for verse different systems.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/UQdm3lQ"&gt;&lt;img src="https://i.imgur.com/UQdm3lQ.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stream processing&lt;/strong&gt; an online/offline system, it is also called nearline processing. just like batch processing system, stream processing takes input and produces output. But stream processing works on events where batch processing. Stream processing builds upon batch jobs.&lt;/p&gt;
+&lt;p&gt;Today we use serverless managed services that process event streams since functions typically stateless in many platforms we can't do windowing and operations like that. There are great managed services for stream processing today in the cloud that require no infrastructure. No complexity.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/MP9vnnz"&gt;&lt;img src="https://i.imgur.com/MP9vnnz.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3 - tier web apps&lt;/strong&gt; or often SPA or sites that talk to serverless storage. Only invoked and run when someone uses it. a typical 3 tier web app&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/SrvMjnk"&gt;&lt;img src="https://i.imgur.com/SrvMjnk.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Web APIs&lt;/strong&gt; are a great option, easy to build web api  data and query systems and do simple calculations, release and deploy without setting up any infrastructure.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/up5275z"&gt;&lt;img src="https://i.imgur.com/up5275z.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;AI and machine learning Data crunching, just like stream and batch processing.&lt;/p&gt;
+&lt;h3 id="further-reading"&gt;Further reading&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Azure Serverless&lt;/strong&gt; &lt;a href="https://docs.microsoft.com/en-us/dotnet/architecture/serverless/serverless-business-scenarios"&gt;business senarios&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amazon AWS&lt;/strong&gt; &lt;a href="https://docs.aws.amazon.com/lambda/latest/dg/stepfunctions-patterns.html"&gt;step functions&lt;/a&gt;,
+&lt;a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-services.html"&gt;lambda services&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Google Cloud&lt;/strong&gt; &lt;a href="https://cloud.google.com/functions/#section-6"&gt;functions&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="summary"&gt;summary&lt;/h2&gt;
+&lt;p&gt;serverless functions are cheap and useful they have many use cases, Even though they are stateless and has a cold start time, The technology is still getting maturing at the time of this blog is published. Amazon is adding a lot of research on this area.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
 	</channel>
 </rss>

@@ -61,18 +61,20 @@
   @RenderSection("Head", false)
 
 </head>
-    <body class="bg-gray-600 ">
+    <body class="">
 
         @* Navigation *@
         @RenderSectionOrPartial("Navigation", "_navigation")
 
         @* Page Header *@
 
+
         @* Main Content *@
         @Model.GetString("Title")
         @RenderBody()
 
         @* Footer *@
+        @RenderSectionOrPartial("Footer", "_footer")
 
         @* javascript *@
 
