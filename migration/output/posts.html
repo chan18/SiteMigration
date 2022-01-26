@@ -45,46 +45,62 @@
 </head>
     <body class="">
         
- <header class="">
+
+<header class="">
 
 
-        <div class="lg:hidden relative p-2 bg-blue-400" style="min-height: 50vh;">
-            <!-- navbar -->
-            <label class="block ">
-              <svg class="fill-current text-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-                <title>menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-              </svg>
-            </label>
-        </div>
+  <div class="lg:hidden relative p-2 bg-blue-400" style="min-height: 50vh;">
+    <!-- navbar -->
+    <label class="block ">
+      <svg class="fill-current text-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
+        height="20" viewBox="0 0 20 20">
+        <title>menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </label>
 
-        <!-- dropdown -->
-        <nav class="sidebar absolute block bg-blue-400 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
-            id="menu">
-            
+
+    <div class="bg-blue-400 py-20 pl-4 text-white block lg:hidden">
+
+      <h1 class="text-5xl font-bold"> Posts </h1>
+
+
+      <p class="text-4xl font-semibold mt-1">  </p>
+
+
+    </div>
+  </div>
+
+  <!-- dropdown -->
+  <nav
+    class="sidebar absolute block bg-blue-400 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
+    id="menu">
+    
 <ul class="lg:flex justify-end bg-blue-400">
+            <li class="hover:bg-blue-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/about">about me</a>
+            </li>
             <li class="hover:bg-blue-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
                 <a class="nav-link" href="/posts">Posts</a>
             </li>
             <li class="hover:bg-blue-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
                 <a class="nav-link" href="/tags">Tags</a>
             </li>
-            <li class="hover:bg-blue-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/about">about me</a>
-            </li>
 </ul>
 
-        </nav>
+  </nav>
 
 </header>
 
 
-        <!-- hero section -->
+        
+<!-- hero section -->
+
 
 
 <section class="relative">
 
-    <div class="bg-blue-400 py-20 pl-4 text-white">
+    <div class="bg-blue-400 py-20 pb-52 pl-4 text-white hidden lg:block">
 
         <h1 class="text-5xl font-bold"> Posts </h1>
 
@@ -94,15 +110,13 @@
 
     </div>
 
-    <div class="custom-shape-divider-bottom-1642627347">
+     <div class="custom-shape-divider-bottom-1642627347">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
         </svg>
     </div>
 
-</section>;
-
-        Posts
+</section>
 
             <h1 class="">2021</h1>
         <div class="">

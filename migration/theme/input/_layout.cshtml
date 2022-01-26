@@ -65,11 +65,9 @@
         @RenderSectionOrPartial("Navigation", "_navigation")
 
         @* Page Header *@
-        @RenderSectionOrPartial("Header","_header");
+        @RenderSectionOrPartial("Header","_header")
 
         @* Main Content *@
-        @Model.GetString("Title")
-
         @RenderBody()
 
         @* Footer *@
