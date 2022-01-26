@@ -2,6 +2,10 @@
  @* Todo: refactor the razer way, loop the outputpages,  *@
  @* Todo:   *@
  <header class="">
+
+      @* TODO: renders the chandu site name on the right side and style it *@
+     @* <a class="navbar-brand" href="@Context.GetLink("/")">@Context.GetString("SiteTitle")</a> *@
+
         <div class="lg:hidden relative p-2 bg-blue-400" style="min-height: 50vh;">
             <!-- navbar -->
             <label class="block ">
@@ -15,31 +19,7 @@
         <!-- dropdown -->
         <nav class="sidebar absolute block bg-blue-400 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
             id="menu">
-            <ul class="lg:flex justify-end bg-blue-400">
-                <li class="hover:bg-blue-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out"><a href="#">1 asdf asdf</a></li>
-                <li class="hover:bg-blue-300 hover:text-black px-5  py-3 uppercase duration-200 ease-in-out"><a href="#">2 asdf asdf</a></li>
-                <li class="hover:bg-blue-300 hover:text-black px-5  py-3 uppercase duration-200 ease-in-out"><a href="#">3 asdf asdf</a></li>
-                <li class="hover:bg-blue-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out"><a href="#">4 asdf asdf</a></li>
-            </ul>
+            @Html.Partial("_navbar")
         </nav>
+
 </header>
-
-<!-- hero section -->
-<section class="relative">
-
-    <div class="bg-blue-400 py-20 pl-4 text-white">
-        <h1 class="text-5xl font-bold"> Algorithm Analysis </h1>
-        <p class="text-4xl font-semibold mt-1"> Analysis of algorithm. </p>
-        <p class="text-2xl mt-4"> Published on 02 October 2021 </p>
-        <div class="mt-2">
-            <a class="bg-white font-semibold p-1 text-black" href="#"> Algorithms </a>
-        </div>
-    </div>
-
-    <div class="custom-shape-divider-bottom-1642627347">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-        </svg>
-    </div>
-
-</section>

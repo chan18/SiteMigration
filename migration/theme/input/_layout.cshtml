@@ -36,17 +36,16 @@
   }
   <meta property="og:type" content="website" />
   <meta property="og:url" content="@Document.GetLink(true)" />
-  
+
   <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
   <link rel="icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon">
 
     @* load tailwind css *@
     <link href="/assets/styles.css" rel="stylesheet" />
 
-      
   <link href="@Context.GetLink("/css/wave.css")" rel="stylesheet">
 
- 
+
     @* syntax highlighter *@
    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
 
@@ -62,15 +61,15 @@
 
 </head>
     <body class="">
-
         @* Navigation *@
         @RenderSectionOrPartial("Navigation", "_navigation")
 
         @* Page Header *@
-
+        @RenderSectionOrPartial("Header","_header");
 
         @* Main Content *@
         @Model.GetString("Title")
+
         @RenderBody()
 
         @* Footer *@
