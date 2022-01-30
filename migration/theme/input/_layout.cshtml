@@ -15,11 +15,11 @@
      @{
         @foreach (IDocument rssFeed in Outputs["**/*.rss"])
         {
-        <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
+         <link type="application/rss+xml" rel="alternate" title="@rssFeed.GetString(WebKeys.Title)" href="@rssFeed.GetLink()" />
         }
         @foreach (IDocument atomFeed in Outputs["**/*.atom"])
         {
-        <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
+          <link type="application/atom+xml" rel="alternate" title="@atomFeed.GetString(WebKeys.Title)" href="@atomFeed.GetLink()" />
         }
     }
 
@@ -68,7 +68,18 @@
         @RenderSectionOrPartial("Header","_header")
 
         @* Main Content *@
-        @RenderBody()
+        <div>
+
+        </div>
+
+        <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto">
+          <div class="p-4">
+            <div id="postType">
+              @RenderBody()
+            </div>
+          </div>
+        </div>
+
 
         @* Footer *@
         @RenderSectionOrPartial("Footer", "_footer")

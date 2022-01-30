@@ -30,10 +30,10 @@
   @* TODO: renders the chandu site name on the right side and style it *@
   @* <a class="navbar-brand" href="@Context.GetLink("/")">@Context.GetString("SiteTitle")</a> *@
 
-  <div class="lg:hidden relative p-2 bg-blue-400" style="min-height: 50vh;">
+  <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
     <!-- navbar -->
     <label class="block ">
-      <svg class="fill-current text-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
+      <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
         height="20" viewBox="0 0 20 20">
         <title>menu</title>
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
@@ -41,7 +41,7 @@
     </label>
 
 
-    <div class="bg-blue-400 py-20 pl-4 text-white block lg:hidden">
+    <div class="bg-gray-900 py-20 pl-4 text-white block lg:hidden">
 
       <h1 class="text-5xl font-bold"> @title </h1>
 
@@ -84,7 +84,7 @@
 
   <!-- dropdown -->
   <nav
-    class="sidebar absolute block bg-blue-400 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
+    class="sidebar absolute block bg-gray-900 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
     id="menu">
     @Html.Partial("_navbar")
   </nav>

@@ -27,7 +27,7 @@
 
 <section class="relative">
 
-    <div class="bg-blue-400 py-20 pb-52 pl-4 text-white hidden lg:block">
+    <div class="bg-gray-900 py-20 pb-52 pl-4 text-white hidden lg:block">
 
         <h1 class="text-5xl font-bold"> @title </h1>
 
@@ -55,7 +55,7 @@
                                                     .Equals(x, StringComparison.OrdinalIgnoreCase)))
                                                     .Where(x => x != null))
                         {
-                            <a href="@Context.GetLink(tag)" class="bg-white font-semibold p-1 text-black"> 
+                            <a href="@Context.GetLink(tag)" class="bg-white font-semibold p-1 text-black">
                                 @tag.GetTitle()
                             </a>
                         }
