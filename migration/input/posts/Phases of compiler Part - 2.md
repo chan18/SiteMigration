@@ -3,6 +3,7 @@ Description: continuation of part 1
 Lead: Introduction to basic concepts 
 Tags: compiler
 IsPost: true
+By: Chandra kanth
 ---
 
 # Language processing

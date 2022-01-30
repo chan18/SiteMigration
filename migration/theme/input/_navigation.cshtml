@@ -31,6 +31,7 @@
   @* <a class="navbar-brand" href="@Context.GetLink("/")">@Context.GetString("SiteTitle")</a> *@
 
   <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
+
     <!-- navbar -->
     <label class="block ">
       <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
@@ -84,9 +85,11 @@
 
   <!-- dropdown -->
   <nav
-    class="sidebar absolute block bg-gray-900 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
+    class="px-10 sidebar absolute block bg-gray-900 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
     id="menu">
+
     @Html.Partial("_navbar")
+
   </nav>
 
 </header>

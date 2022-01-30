@@ -5,11 +5,12 @@
 
 
 @layer base {
+
   #postType ul {
     @apply list-disc;
-    @apply pl-6;
-    @apply mb-10;
-    @apply text-xl;
+    @apply pl-2;
+    @apply mb-2;
+    @apply text-base;
   }
 
   #postType h1 {

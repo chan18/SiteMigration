@@ -5,169 +5,14 @@
 		<link>/</link>
 		<description />
 		<copyright>2022</copyright>
-		<pubDate>Sun, 30 Jan 2022 12:28:41 GMT</pubDate>
-		<lastBuildDate>Sun, 30 Jan 2022 12:28:41 GMT</lastBuildDate>
-		<item>
-			<title>Algorithm Analysis</title>
-			<link>/posts/algorithmanalisys</link>
-			<description>basics of algorithm Analysis.</description>
-			<guid isPermaLink="false">/posts/algorithmanalisys</guid>
-			<pubDate>Sat, 02 Oct 2021 17:07:32 GMT</pubDate>
-			<content:encoded>&lt;h1 id="introduction-to-algorithms"&gt;Introduction to algorithms&lt;/h1&gt;
-&lt;p&gt;In layman's terms An &lt;strong&gt;algorithm&lt;/strong&gt; is a set of instructions to complete a task. With well defined specification of problems with input and output.
-We can see algorithms as tools to solve well defined computational problems.&lt;/p&gt;
-&lt;p&gt;Some of the &lt;strong&gt;example problems&lt;/strong&gt; which can be solved by algorithms :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Human genome.&lt;/li&gt;
-&lt;li&gt;Route finding algorithms.&lt;/li&gt;
-&lt;li&gt;Cryptography algorithms based on number theory ( encryption and decryption ).&lt;/li&gt;
-&lt;li&gt;Linear programming is used to strategically allocate resources.
-&lt;ul&gt;
-&lt;li&gt;Oil company wants to know where to place the well for maximum profit&lt;/li&gt;
-&lt;li&gt;Manufacturing and commercial enterprise allocating strategy&lt;/li&gt;
-&lt;li&gt;An airline wants to know the flight in the least expensive way.&lt;/li&gt;
-&lt;li&gt;A political candidate wants to know where to spend money on comagine ads to increase the chance of winning an election.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Graph algorithms
-&lt;ul&gt;
-&lt;li&gt;GPS device&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Dynamic programming
-&lt;ul&gt;
-&lt;li&gt;AI algorithm that plays checkers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;K-nearest neighbors
-&lt;ul&gt;
-&lt;li&gt;Recommendations system&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There are some problems which can not be solved in a timely manner. These problems are categorized as NP-complete problems.&lt;/p&gt;
-&lt;h3 id="abstract-data-type"&gt;Abstract Data Type&lt;/h3&gt;
-&lt;p&gt;A generic low level computer language deals with ones and zeros, boolean logics like ANDs and ORs, IF-statements and GOTO-statements. But an algorithm talks about abstract objects as integers, real numbers, strings, sets, stacks, graphs and trees.&lt;/p&gt;
-&lt;p&gt;Abstract operations such as &lt;strong&gt;sort the list&lt;/strong&gt;, &lt;strong&gt;pop the stack&lt;/strong&gt;, logical relationships like greater than, prefix, subset, connected and child
-Every modern programming language  has ADTs built into them.&lt;/p&gt;
-&lt;h3 id="correctness-of-an-algorithm"&gt;Correctness of an algorithm&lt;/h3&gt;
-&lt;p&gt;An algorithm is correct for a problem based on the correct output it generates after a series of logical steps it goes through from proper input. The correctness of an algorithm should be transparent.&lt;/p&gt;
-&lt;h3 id="running-time-of-an-algorithm"&gt;Running time of an algorithm&lt;/h3&gt;
-&lt;p&gt;It is not just enough to produce a correct output, It should be completed in a reasonable amount of time and memory space.&lt;/p&gt;
-&lt;p&gt;The runtime of an algorithm is a function from the size n of the inputs vs number of operations the computations must do.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Feasible&lt;/strong&gt; algorithms are time(n) = O(n&lt;sup&gt;2&lt;/sup&gt;)  (polynomial).  “BIG OH of n square“&lt;br /&gt;
-&lt;strong&gt;Infeasible&lt;/strong&gt; algorithms are time(n) =  O(2&lt;sup&gt;n&lt;/sup&gt;) (exponential). “BIG OH of 2 rise to n”&lt;/p&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/chart.js&amp;#64;3.5.1/dist/chart.min.js"&gt;&lt;/script&gt;
-&lt;div style="min-heigh:600; min-width:900"&gt;
-  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
-&lt;/div&gt;
-&lt;script&gt;
-var ctx = document.getElementById('myChart').getContext('2d');
-
-
-const worstCase = [1,60,70,80,90,100];
-const averageCase = [1,40,50,60,70];
-const bestCase = [1,10,20,30,40];
-
-
-// http://stackoverflow.com/questions/962802#962890
-function shuffle(array) {
-  var tmp, current, top = array.length;
-  if(top) while(--top) {
-    current = Math.floor(Math.random() * (top + 1));
-    tmp = array[current];
-    array[current] = array[top];
-    array[top] = tmp;
-  }
-  return array;
-}
-
-const data = {
-  labels: [1,2,3,4,5,6],
-  datasets: [{
-    label: 'Worst Case',
-    data: worstCase,
-    fill: false,
-    borderColor: 'rgb(75, 192, 192)',
-      tension: 0.4
-  },
-  {
-    label: 'Average Case',
-    data: averageCase,
-    fill: false,
-    borderColor: '#f67019',
-      tension: 0.4
-  },
-  {
-    label: 'Best Case',
-    data: bestCase,
-    fill: false,
-    borderColor: '#8549ba',
-      tension: 0.4
-  }]
-};
-
-const config = {
-  responsive: true,
-  type: 'line',
-  data: data,
-  options: {
-    responsive: true,
-    plugins: {
-      title: {
-        display: true,
-        text: 'Algorithm Analysis'
-      },
-    },
-    interaction: {
-      intersect: false,
-    },
-    scales: {
-      x: {
-        display: true,
-        title: {
-          display: true,
-          text: "Input N"
-        },
-        suggestedMin: -10,
-        suggestedMax: 200
-      },
-      y: {
-        display: true,
-        title: {
-          display: true,
-          text: 'Number Of Operations'
-        },
-        suggestedMin: -10,
-        suggestedMax: 110
-      }
-    }
-  }
-};
-
-var myChart = new Chart(ctx, config);
-
-
-&lt;/script&gt;
-&lt;p&gt;&lt;strong&gt;Worst case complexity&lt;/strong&gt; : maximum number of steps taken in for size of n.&lt;br /&gt;
-&lt;strong&gt;Best case complexity&lt;/strong&gt; : minimum number of steps taken in for size of n.&lt;br /&gt;
-&lt;strong&gt;Average case complexity&lt;/strong&gt;: average number of steps taken in for size of n.&lt;/p&gt;
-&lt;p&gt;Worst case complexity is most useful out of this, In best case even worst case algorithms(brute force)  works fine. What happens when we have a larger input size? such that in the worst case.&lt;/p&gt;
-&lt;p&gt;Best, worst and average case of an algorithm are numerical functions working with them requires precision  Like :&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Ups and downs in a graph ( when we draw this functions on a graph for each case )&lt;/li&gt;
-&lt;li&gt;Too many details to specify accurately.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It is much easier to talk in terms of simple &lt;strong&gt;upper&lt;/strong&gt; and &lt;strong&gt;lower bounds&lt;/strong&gt; of time complexity functions using &lt;strong&gt;“BIG OH”&lt;/strong&gt; notations; we can simply ignore details which will not help us in comparing between different algorithms.&lt;/p&gt;
-</content:encoded>
-			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
-		</item>
+		<pubDate>Sun, 30 Jan 2022 15:14:23 GMT</pubDate>
+		<lastBuildDate>Sun, 30 Jan 2022 15:14:23 GMT</lastBuildDate>
 		<item>
 			<title>Introduction to language processing and phases of compiler Part - 2</title>
 			<link>/posts/phases-of-compiler-part-2</link>
 			<description>continuation of part 1</description>
 			<guid isPermaLink="false">/posts/phases-of-compiler-part-2</guid>
-			<pubDate>Mon, 20 Sep 2021 02:00:04 GMT</pubDate>
+			<pubDate>Sun, 30 Jan 2022 18:12:20 GMT</pubDate>
 			<content:encoded>&lt;h1 id="language-processing"&gt;Language processing&lt;/h1&gt;
 &lt;p&gt;Before we start understanding the phases of the compiler we need to have a basic understanding of automata theory.&lt;/p&gt;
 &lt;p&gt;Automata theory is the study of abstract computing devices or machines before there were computers in the late 1930s.&lt;/p&gt;
@@ -332,6 +177,161 @@ Note that all of this optimization are performed on three address instruction as
 &lt;p&gt;Takes the IR ( intermediate representation ) by the front end of the compiler along with relevant symbol table information.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Machine Dependent code optimizer&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Uses the sample principles has code optimizer phase. Uses the graph theory, depth first ordering of flow graphs, classifications of edges, flow graphs, depth first order.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>Algorithm Analysis</title>
+			<link>/posts/algorithmanalisys</link>
+			<description>basics of algorithm Analysis.</description>
+			<guid isPermaLink="false">/posts/algorithmanalisys</guid>
+			<pubDate>Sun, 30 Jan 2022 18:11:29 GMT</pubDate>
+			<content:encoded>&lt;h1 id="introduction-to-algorithms"&gt;Introduction to algorithms&lt;/h1&gt;
+&lt;p&gt;In layman's terms An &lt;strong&gt;algorithm&lt;/strong&gt; is a set of instructions to complete a task. With well defined specification of problems with input and output.
+We can see algorithms as tools to solve well defined computational problems.&lt;/p&gt;
+&lt;p&gt;Some of the &lt;strong&gt;example problems&lt;/strong&gt; which can be solved by algorithms :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Human genome.&lt;/li&gt;
+&lt;li&gt;Route finding algorithms.&lt;/li&gt;
+&lt;li&gt;Cryptography algorithms based on number theory ( encryption and decryption ).&lt;/li&gt;
+&lt;li&gt;Linear programming is used to strategically allocate resources.
+&lt;ul&gt;
+&lt;li&gt;Oil company wants to know where to place the well for maximum profit&lt;/li&gt;
+&lt;li&gt;Manufacturing and commercial enterprise allocating strategy&lt;/li&gt;
+&lt;li&gt;An airline wants to know the flight in the least expensive way.&lt;/li&gt;
+&lt;li&gt;A political candidate wants to know where to spend money on comagine ads to increase the chance of winning an election.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Graph algorithms
+&lt;ul&gt;
+&lt;li&gt;GPS device&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dynamic programming
+&lt;ul&gt;
+&lt;li&gt;AI algorithm that plays checkers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;K-nearest neighbors
+&lt;ul&gt;
+&lt;li&gt;Recommendations system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are some problems which can not be solved in a timely manner. These problems are categorized as NP-complete problems.&lt;/p&gt;
+&lt;h3 id="abstract-data-type"&gt;Abstract Data Type&lt;/h3&gt;
+&lt;p&gt;A generic low level computer language deals with ones and zeros, boolean logics like ANDs and ORs, IF-statements and GOTO-statements. But an algorithm talks about abstract objects as integers, real numbers, strings, sets, stacks, graphs and trees.&lt;/p&gt;
+&lt;p&gt;Abstract operations such as &lt;strong&gt;sort the list&lt;/strong&gt;, &lt;strong&gt;pop the stack&lt;/strong&gt;, logical relationships like greater than, prefix, subset, connected and child
+Every modern programming language  has ADTs built into them.&lt;/p&gt;
+&lt;h3 id="correctness-of-an-algorithm"&gt;Correctness of an algorithm&lt;/h3&gt;
+&lt;p&gt;An algorithm is correct for a problem based on the correct output it generates after a series of logical steps it goes through from proper input. The correctness of an algorithm should be transparent.&lt;/p&gt;
+&lt;h3 id="running-time-of-an-algorithm"&gt;Running time of an algorithm&lt;/h3&gt;
+&lt;p&gt;It is not just enough to produce a correct output, It should be completed in a reasonable amount of time and memory space.&lt;/p&gt;
+&lt;p&gt;The runtime of an algorithm is a function from the size n of the inputs vs number of operations the computations must do.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feasible&lt;/strong&gt; algorithms are time(n) = O(n&lt;sup&gt;2&lt;/sup&gt;)  (polynomial).  “BIG OH of n square“&lt;br /&gt;
+&lt;strong&gt;Infeasible&lt;/strong&gt; algorithms are time(n) =  O(2&lt;sup&gt;n&lt;/sup&gt;) (exponential). “BIG OH of 2 rise to n”&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js&amp;#64;3.5.1/dist/chart.min.js"&gt;&lt;/script&gt;
+&lt;div style="min-heigh:600; min-width:900"&gt;
+  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var ctx = document.getElementById('myChart').getContext('2d');
+
+
+const worstCase = [1,60,70,80,90,100];
+const averageCase = [1,40,50,60,70];
+const bestCase = [1,10,20,30,40];
+
+
+// http://stackoverflow.com/questions/962802#962890
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if(top) while(--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
+  }
+  return array;
+}
+
+const data = {
+  labels: [1,2,3,4,5,6],
+  datasets: [{
+    label: 'Worst Case',
+    data: worstCase,
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+      tension: 0.4
+  },
+  {
+    label: 'Average Case',
+    data: averageCase,
+    fill: false,
+    borderColor: '#f67019',
+      tension: 0.4
+  },
+  {
+    label: 'Best Case',
+    data: bestCase,
+    fill: false,
+    borderColor: '#8549ba',
+      tension: 0.4
+  }]
+};
+
+const config = {
+  responsive: true,
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Algorithm Analysis'
+      },
+    },
+    interaction: {
+      intersect: false,
+    },
+    scales: {
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: "Input N"
+        },
+        suggestedMin: -10,
+        suggestedMax: 200
+      },
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Number Of Operations'
+        },
+        suggestedMin: -10,
+        suggestedMax: 110
+      }
+    }
+  }
+};
+
+var myChart = new Chart(ctx, config);
+
+
+&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;Worst case complexity&lt;/strong&gt; : maximum number of steps taken in for size of n.&lt;br /&gt;
+&lt;strong&gt;Best case complexity&lt;/strong&gt; : minimum number of steps taken in for size of n.&lt;br /&gt;
+&lt;strong&gt;Average case complexity&lt;/strong&gt;: average number of steps taken in for size of n.&lt;/p&gt;
+&lt;p&gt;Worst case complexity is most useful out of this, In best case even worst case algorithms(brute force)  works fine. What happens when we have a larger input size? such that in the worst case.&lt;/p&gt;
+&lt;p&gt;Best, worst and average case of an algorithm are numerical functions working with them requires precision  Like :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ups and downs in a graph ( when we draw this functions on a graph for each case )&lt;/li&gt;
+&lt;li&gt;Too many details to specify accurately.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is much easier to talk in terms of simple &lt;strong&gt;upper&lt;/strong&gt; and &lt;strong&gt;lower bounds&lt;/strong&gt; of time complexity functions using &lt;strong&gt;“BIG OH”&lt;/strong&gt; notations; we can simply ignore details which will not help us in comparing between different algorithms.&lt;/p&gt;
 </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
@@ -525,32 +525,6 @@ Pricing is based on the actual amount of resources consumed by an application , 
 &lt;h1 id="how-much-does-it-cost-do-you-need-serverless"&gt;How much does it cost? Do you need serverless?&lt;/h1&gt;
 &lt;p&gt;Cost estimation for your serverless function add in the requirement and it will estimate a cost for you.
 &lt;a href="http://serverlesscalc.com/"&gt;serverlesscalc.com&lt;/a&gt;, If you think you need a serverless services? Should your webapp should be a serverless? Then you can check that with the below link. &lt;a href="https://servers.lol/"&gt;servers.lol&lt;/a&gt;.&lt;/p&gt;
-</content:encoded>
-			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
-		</item>
-		<item>
-			<title>What is Cloud Computing</title>
-			<link>/posts/cloudcomputing</link>
-			<guid isPermaLink="false">/posts/cloudcomputing</guid>
-			<pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;h1 id="what-is-cloud-computing"&gt;What is cloud computing?&lt;/h1&gt;
-&lt;p&gt;In a nutshell cloud computing allows access to a large amount of computing power in a fully virtualized manner. The aim of this technology is to deliver computing as a utility.
-Utility computing is a business model of on-demand delivery of computing power ( pay-as-you-go).&lt;/p&gt;
-&lt;p&gt;Cloud computing provides multiple services initially offered by microsoft, google and amazon based on a model where computing infrastructure is viewed as a “cloud”.&lt;/p&gt;
-&lt;p&gt;Principle of cloud computing behind this model is to offer computing, storage and software as service.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Professor Dr. Rajkumar Buyya's Cyberhome says “Cloud is a parallel and distributed computing system consisting of a collection of inter-connected and virtualised computers that are dynamically provisioned and presented as one or more unified computing resources based on service-level agreements (SLA) established through negotiation between the service provider and consumers.”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id="types-of-cloud-computing"&gt;Types of cloud computing&lt;/h1&gt;
-&lt;p&gt;&lt;a href="https://imgur.com/2ioC9U8"&gt;&lt;img src="https://i.imgur.com/2ioC9U8.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt; (Software as a service ): Self- service with zero operations. Software with no installation, no patch, and operations.&lt;br/&gt;
-&lt;strong&gt;IaaS&lt;/strong&gt; (Infrastructure as a service ): Agile, on-demand infrastructure. Get things based on your business needs. Very flexible.&lt;br/&gt;
-&lt;strong&gt;PaaS&lt;/strong&gt; (Application as a service): Application-centric with integrated runtime. Building an application stack is not required.&lt;br/&gt;
-&lt;strong&gt;CaaS&lt;/strong&gt; (Container as a service): Intelligent machinery for diverse workloads. This machinery helps developers handle all types of workloads. It might not be suitable for other environments, though. Ex:- Kubernetes.&lt;br/&gt;
-&lt;strong&gt;FaaS&lt;/strong&gt; (Function as a service): Pay-per-use code used for execution only. It is used when something is running as it also makes development fast and easy. ( serverless computing ) &lt;br/&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://imgur.com/wyvifCD"&gt;&lt;img src="https://i.imgur.com/wyvifCD.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id="summary"&gt;Summary&lt;/h1&gt;
-&lt;p&gt;In a nutshell cloud computing is an SLA between vendor and enterprise, Venders like AWS, Azure.&lt;/p&gt;
 </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>
