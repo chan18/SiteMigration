@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+     <title>chandu - Introduction to language processing and Phases of compiler</title>
+
+     <link rel="canonical" href="/posts/introductionandphasesofcompilerpartone">
+
+         <link type="application/rss+xml" rel="alternate" href="/feed.rss" />
+          <link type="application/atom+xml" rel="alternate" href="/feed.atom" />
+
+  <meta name="application-name" content="chandu" />
+  <meta name="msapplication-tooltip" content="chandu" />
+  <meta name="msapplication-starturl" content="/" />
+
+  <meta property="og:title" content="chandu - Introduction to language processing and Phases of compiler" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/posts/introductionandphasesofcompilerpartone" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="/assets/styles.css" rel="stylesheet" />
+
+  <link href="/css/wave.css" rel="stylesheet">
+
+
+   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css">
+
+  
+
+
+
+  
+
+</head>
+    <body class="">
+        
+
+<header class="">
+
+
+  <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
+    <!-- navbar -->
+    <label class="block ">
+      <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
+        height="20" viewBox="0 0 20 20">
+        <title>menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </label>
+
+
+    <div class="bg-gray-900 py-20 pl-4 text-white block lg:hidden">
+
+      <h1 class="text-5xl font-bold"> Introduction to language processing and Phases of compiler </h1>
+
+
+      <p class="text-4xl font-semibold mt-1"> Introduction to language processing and Phases of compiler Part - 1 </p>
+
+        <p class="text-2xl mt-4 z-50"> Published on 30 January 2021 </p>
+        <div class="mt-2">
+
+            <div class="mt-3">
+                <a href="/tags/compiler" class="bg-white font-semibold p-1 text-black">
+                  compiler
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+
+  <!-- dropdown -->
+  <nav
+    class="sidebar absolute block bg-gray-900 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
+    id="menu">
+    
+<ul class="lg:flex justify-end bg-gray-900">
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/about">about me</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/resume">Resume</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/videos">Videos</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/posts">Posts</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/tags">Tags</a>
+            </li>
+</ul>
+
+  </nav>
+
+</header>
+
+
+        
+<!-- hero section -->
+
+
+
+<section class="relative">
+
+    <div class="bg-gray-900 py-20 pb-52 pl-4 text-white hidden lg:block">
+
+        <h1 class="text-5xl font-bold"> Introduction to language processing and Phases of compiler </h1>
+
+
+        <p class="text-4xl font-semibold mt-1"> Introduction to language processing and Phases of compiler Part - 1 </p>
+
+            <p class="text-2xl mt-4 z-50"> Published on 30 January 2021 </p>
+            <div class="mt-2">
+
+                    <div class="mt-3">
+                            <a href="/tags/compiler" class="bg-white font-semibold p-1 text-black">
+                                compiler
+                            </a>
+                    </div>
+
+            </div>
+
+    </div>
+
+     <div class="custom-shape-divider-bottom-1642627347">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+</section>
+
+        <div>
+
+        </div>
+
+        <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto">
+          <div class="p-4">
+            <div id="postType">
+              <p>Compiler is one of the fascinating programs that has been built ex: <a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">GCC</a>, it is a direct application of <a href="https://en.wikipedia.org/wiki/Automata_theory">Automata Theory</a> in source code analysis and In lame terms compilers just translate from high level language to low level language (<a href="https://en.wikipedia.org/wiki/Machine_code">Machine Level Code</a>) binary form, Which CPU can understand.</p>
+<p>Compilation process has different phases which can be broken down to front end ( parsing source code and analysis with automata theory), middle end (code optimization phase) and back end (<a href="https://en.wikipedia.org/wiki/X86">x86</a>  <a href="https://en.wikipedia.org/wiki/Intel">INTEL</a> and <a href="https://en.wikipedia.org/wiki/Advanced_Micro_Devices">AMD</a> , <a href="https://en.wikipedia.org/wiki/ARM_architecture">ARM</a> <a href="https://en.wikipedia.org/wiki/Apple_M1">APPLE M1 CHIP</a>).</p>
+<p>Intel, AMD X86 instruction set <a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer">CISC</a></p>
+<p>Apple M1 ARM instruction set <a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">RISC</a></p>
+<h3 id="fun-fact">Fun Fact :</h3>
+<blockquote>
+<p>The reason why the Apple M1 chip is faster is because of this ARM architecture but they added much more than that. Switching from X86 to ARM was the huge step for the <a href="https://www.apple.com/mac/m1/">Apple M1 chip</a>.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer">RISC</a> is much faster than <a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer">CISC</a> and <a href="https://en.wikipedia.org/wiki/ARM_architecture">ARM</a>(<a href="https://www.apple.com/mac/m1/">Apple M1 chip</a>) consumes less power compared to <a href="https://en.wikipedia.org/wiki/X86">x86</a>.</p>
+<h1 id="research-papers">Research papers</h1>
+<p><a href="https://en.wikipedia.org/wiki/LLVM">LLVM</a> (low level virtual machine) research <a href="https://llvm.org/pubs/2004-01-30-CGO-LLVM.pdf">paper</a></p>
+<p><a href="https://blog.llvm.org/">llvm.org</a> interestingly generated with <a href="https://golang.org/">go lang</a> <a href="https://gohugo.io/">Hugo framework</a> which is a static site generator, The blog you are reading is generated by a static site generator which is built with <a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29">C#</a> web framework called <a href="https://statiq.dev/">statiq</a>.</p>
+<h3 id="what-is-llvm">What is LLVM?</h3>
+<p>I am not going to explain what it is right now <a href="https://llvm.org/">llvm.org</a> has everything you need to know about it. LLVM is a framework to develop compilers commercial and open source projects</p>
+<p>According to wiki</p>
+<blockquote>
+<p>The LLVM compiler infrastructure project is a set of compiler and toolchain technologies, which can be used to develop a front end for any programming language and a back end for any instruction set architecture. LLVM is designed around a language-independent intermediate representation (IR) that serves as a portable, high-level assembly language that can be optimized with a variety of transformations over multiple passes.</p>
+</blockquote>
+<h6 id="intresting-reserch-pepares-to-read">Intresting reserch pepares to read.</h6>
+<p>designing compilers for quantum computing <a href="https://arxiv.org/pdf/2012.09680.pdf">research paper</a></p>
+<p>ML guided compiler optimization framework <a href="https://arxiv.org/pdf/2101.04808.pdf">research paper</a>.</p>
+<p>Microsoft research papers on <a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/09/static-typescript-draft2.pdf">Static TypeScript</a></p>
+<p>C# compiler <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2003-32.pdf">research papers</a>
+, <a href="https://github.com/dotnet/fsharp/blob/main/docs/compiler-guide.md">F# Compiler</a></p>
+<p>Before you read that research paper, Which i have added for reader reference, I will try to explain source language compilation and how it works under the hood as simply as possible.</p>
+<h1 id="compiler">Compiler</h1>
+<p>Compiler is a program that translates into source code which is written in human readable language ( high level programming such as c,c++) into target program ( low level code, executable). Reports error in the source code during the process.</p>
+<p>According to wiki</p>
+<blockquote>
+<p>In computing, a compiler is a computer program that translates computer code written in one programming language (the source language) into another language (the target language). The name &quot;compiler&quot; is primarily used for programs that translate source code from a high-level programming language to a lower level language (e.g., assembly language, object code, or machine code) to create an executable program.</p>
+</blockquote>
+<p><a href="https://imgur.com/APZ7qu5"><img src="https://i.imgur.com/APZ7qu5.png" title="source: imgur.com" /></a></p>
+<h1 id="interpreter">Interpreter</h1>
+<p>Interpreter is another type of language translator just like a compiler but instead of compiling down the source code to target program, interpreter interprets the source code line by line, on user inputs and produces outputs which makes the interpreter much more efficient in error diagnostics.</p>
+<p>According to wiki</p>
+<blockquote>
+<p>In computer science, an interpreter is a computer program that directly executes instructions written in a programming or scripting language, without requiring them previously to have been compiled into a machine language program.</p>
+</blockquote>
+<p><a href="https://imgur.com/uNrBONd"><img src="https://i.imgur.com/uNrBONd.png" title="source: imgur.com" /></a></p>
+<h1 id="transpiler">Transpiler</h1>
+<p>Transpiler is source code to source code language transpilation ex:- Typescript to javascript is know has transpilation, Babeljs is a transpiler which takes the <a href="https://javascript.info/">modern javascript</a> code, javascript is also know has <a href="https://en.wikipedia.org/wiki/ECMAScript">ECMAscript</a>.</p>
+<h6 id="example">example</h6>
+<p><a href="https://babeljs.io/">https://babeljs.io/</a></p>
+<h3 id="further-reading">Further reading</h3>
+<p><a href="https://en.wikipedia.org/wiki/Babel_(transcompiler)">Babel (transcompiler) - Wikipedia</a>, <a href="https://en.wikipedia.org/wiki/Source-to-source_compiler">Source-to-source compiler - Wikipedia</a></p>
+<p><a href="https://imgur.com/3vf6RU5"><img src="https://i.imgur.com/3vf6RU5.png" title="source: imgur.com" /></a></p>
+<h1 id="hybrid-compiler">Hybrid compiler</h1>
+<p>Hybrid compiler is a combination of compiler and interpreter which is interpreted by virtual machine. Ex: C# source program first compiled into IL intermediate language. In the case of java it produces bytecode which is interpreted by a virtual machine. JIT compilers translate the bytecodes into machine language immediately.</p>
+<p><a href="https://imgur.com/NDTfzRO"><img src="https://i.imgur.com/NDTfzRO.png" title="source: imgur.com" /></a></p>
+<p>C# and java uses a hybrid compiler under the hood, it is not a compiler or an interpreter but a combination of both I will try to summarize has much information as possible about C# compilation process. I will not go in details about CLR this time. Let’s take a moment to read about it.</p>
+<h3 id="common-language-infrastructure-and-common-language-runtime-of-microsoft.net-framework">Common Language Infrastructure and Common Language Runtime of Microsoft .NET Framework</h3>
+<p>CLI provides a language neutral platform for application development CLR is an execution engine for .NET Framework,  .NET program compiles down to IL ( intermediate Language) during execution JIT compiles into CPU <a href="https://llvm.org/docs/CompilerWriterInfo.html">hardware architecture</a> specific machine code.</p>
+<p><a href="https://imgur.com/HPaKVoP"><img src="https://i.imgur.com/HPaKVoP.png" title="source: imgur.com" /></a></p>
+<p>Now let’s look an example how a C# source code looks like in different phase of compilation.</p>
+<h6 id="example-c-hello-world-program">example C# hello world program</h6>
+<p>below snip is written in a <a href="https://www.linqpad.net/">linqpad</a> which does not needed to include namespaces.</p>
+<h1 id="source-program">Source program</h1>
+<pre><code class="language-C#">void Main()
+{
+    Console.WriteLine(&quot;Hello World&quot;);
+}
+</code></pre>
+<h1 id="abstract-syntax-tree">Abstract Syntax Tree</h1>
+<p>Abstract syntax tree helps in generating intermediate-code in this CIL ( common intermediate language ).</p>
+<h6 id="i-will-discuss-how-to-create-a-ast-in-part-2-of-this-blog-post">I will discuss how to create a AST in part - 2 of this blog post.</h6>
+<p><a href="https://imgur.com/o5S31y2"><img src="https://i.imgur.com/o5S31y2.png" title="source: imgur.com" /></a></p>
+<h1 id="syntax-definition">Syntax Definition</h1>
+<p>Context free grammar is used to define the rules for a language. In lame terms a set of rules written in a formal language, which are defined from automata theory or we can say theory of computer science. The vocabulary used to define this is called production rules. That describes syntax of a programming language or a string.</p>
+<h6 id="dont-freek-out-if-you-dont-understand-about-cfg-i-will-explain-later-in-this-blog-post">Don't freek out if you don't understand about CFG, i will explain later in this blog post. :)</h6>
+<p><a href="https://imgur.com/gpH4tg1"><img src="https://i.imgur.com/gpH4tg1.png" title="source: imgur.com" /></a></p>
+<h1 id="intermediate-code-generation">Intermediate Code Generation</h1>
+<p>Before I start describing how we got from AST to IL, We need to deep dive into the Run-Time environments of a VM or and <a href="https://llvm.org/docs/CompilerWriterInfo.html">CPU architecture</a> which are out of scope for this blog. I will link it here once I write about it.</p>
+<p>As of now to arrive at this point we have to go throw the paraser -&gt; static checking -&gt; Intermediate Code Generator. All of this are done sequentially; sometimes they can be combined and folded into parsing. <a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph">DAG</a> just like AST are used for arithmetic expressions evaluation.</p>
+<p>Front end analyzes a source program and creates an intermediate representation. From which Back end generates the target code.</p>
+<p>A compiler for language i and machine j can be built by combining the front end for language i with the back end for machine j.</p>
+<pre><code class="language-x86asm">IL_0000:  ldstr       &quot;Hello World&quot;
+IL_0005:  call        System.Console.WriteLine
+IL_000A:  ret
+
+get_QueryCancelToken:
+IL_0000:  ldarg.0
+IL_0001:  ldfld       UserQuery._queryCancelTokenOrigin
+IL_0006:  callvirt    System.Lazy&lt;System.Threading.CancellationToken&gt;.get_Value
+IL_000B:  ret
+</code></pre>
+<h2 id="static-checking-and-type-checking">Static Checking and Type Checking</h2>
+<p>Static checking is a consistency check that is done during compilation which catches the programming errors early in the compilation process. Static checking includes Syntactic checking and type checking, type rules of a language assure that an operator is applied to the right number and type of operands.</p>
+<p>A compiler needs to assign a type expression to each component of the source program and it has to conform to a collection of logical rules that is called the type system for the source language type and a sound type system elements the dynamic checking for type errors.</p>
+<p>Rules for type checking have two forms: Synthesis and inference. Type synthesis builds up the type of an expression from the types of its subexpressions, Type inference determines the type of a language construct from the way it is used</p>
+<p>Type conversion conversion from one type to another is said to be implicit if it is done by compiler automatically it is also called as coercionsl, conversion said to be explicit if the programmer must write something to cause the conversion.</p>
+<h6 id="example-1">Example</h6>
+<p>The type of an expression E1 op E2 is determined by the operator op and the types of E1 and E2. A coercion is an implicit type conversion, such as from integer to oat. Intermediate code contains explicit type conversions to ensure an exact match between operand types and the types expected by an operator.</p>
+<blockquote>
+<p>The above part might sound jaragon to you if you don't have any understanding of theory of computer science, Algorithms and Data Structures.</p>
+</blockquote>
+<blockquote>
+<p>We will learn basics of automata theory, CFG, history about computer science theory, syntax definition, parse tree, SDT and SDD in part - 2 of this blog post. I will try to summarize it without any loss of information.</p>
+</blockquote>
+
+            </div>
+          </div>
+        </div>
+
+
+        
+   <!-- footer -->
+    <footer class="p-16 flex flex-row space-x-10  bg-gradient-to-br  from-gray-800  to-gray-900  text-gray-500 ">
+      <div class="hidden md:block">
+        <div class="m-2 py-12  px-6 bg-gray-800 hover:shadow-2xl hover:shadow-gray-800/50
+        hover:-translate-y-1 duration-300  hover:scale-100 ">
+          <img src="../img/logo.png" alt="logo" class="h-20 w-19" />
+        </div>
+        <div>
+        </div>
+      </div>
+
+       <div class="flex justify-center flex-col ">
+          <p> Copyright {@} 2021 </p>
+          <span class="flex flex-row space-x-3">
+              <p> Rss Feed </p>
+              <p> Atom Feed </p>
+          </span>
+          <p> Generated by Statiq </p>
+       </div>
+    </footer>
+
+
+        
+        
+
+        <script src="/js/navigation.js"></script>
+    </body>
+</html>

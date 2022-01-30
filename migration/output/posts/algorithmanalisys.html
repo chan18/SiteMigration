@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+     <title>chandu - Algorithm Analysis</title>
+
+     <link rel="canonical" href="/posts/algorithmanalisys">
+
+         <link type="application/rss+xml" rel="alternate" href="/feed.rss" />
+          <link type="application/atom+xml" rel="alternate" href="/feed.atom" />
+
+  <meta name="application-name" content="chandu" />
+  <meta name="msapplication-tooltip" content="chandu" />
+  <meta name="msapplication-starturl" content="/" />
+
+  <meta property="og:title" content="chandu - Algorithm Analysis" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/posts/algorithmanalisys" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="/assets/styles.css" rel="stylesheet" />
+
+  <link href="/css/wave.css" rel="stylesheet">
+
+
+   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.css">
+
+  
+
+
+
+  
+
+</head>
+    <body class="">
+        
+
+<header class="">
+
+
+  <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
+    <!-- navbar -->
+    <label class="block ">
+      <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
+        height="20" viewBox="0 0 20 20">
+        <title>menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </label>
+
+
+    <div class="bg-gray-900 py-20 pl-4 text-white block lg:hidden">
+
+      <h1 class="text-5xl font-bold"> Algorithm Analysis </h1>
+
+
+      <p class="text-4xl font-semibold mt-1"> Analysis of algorithm. </p>
+
+        <p class="text-2xl mt-4 z-50"> Published on 02 October 2021 </p>
+        <div class="mt-2">
+
+            <div class="mt-3">
+                <a href="/tags/algorithm" class="bg-white font-semibold p-1 text-black">
+                  Algorithm
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+  </div>
+
+  <!-- dropdown -->
+  <nav
+    class="sidebar absolute block bg-gray-900 inset-x-0 top-0 text-white font-semibold transform -translate-y-full lg:transform-none duration-200 ease-in-out lg:my-0 z-10"
+    id="menu">
+    
+<ul class="lg:flex justify-end bg-gray-900">
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/about">about me</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/resume">Resume</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/videos">Videos</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/posts">Posts</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/tags">Tags</a>
+            </li>
+</ul>
+
+  </nav>
+
+</header>
+
+
+        
+<!-- hero section -->
+
+
+
+<section class="relative">
+
+    <div class="bg-gray-900 py-20 pb-52 pl-4 text-white hidden lg:block">
+
+        <h1 class="text-5xl font-bold"> Algorithm Analysis </h1>
+
+
+        <p class="text-4xl font-semibold mt-1"> Analysis of algorithm. </p>
+
+            <p class="text-2xl mt-4 z-50"> Published on 02 October 2021 </p>
+            <div class="mt-2">
+
+                    <div class="mt-3">
+                            <a href="/tags/algorithm" class="bg-white font-semibold p-1 text-black">
+                                Algorithm
+                            </a>
+                    </div>
+
+            </div>
+
+    </div>
+
+     <div class="custom-shape-divider-bottom-1642627347">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+</section>
+
+        <div>
+
+        </div>
+
+        <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto">
+          <div class="p-4">
+            <div id="postType">
+              <h1 id="introduction-to-algorithms">Introduction to algorithms</h1>
+<p>In layman's terms An <strong>algorithm</strong> is a set of instructions to complete a task. With well defined specification of problems with input and output.
+We can see algorithms as tools to solve well defined computational problems.</p>
+<p>Some of the <strong>example problems</strong> which can be solved by algorithms :</p>
+<ul>
+<li>Human genome.</li>
+<li>Route finding algorithms.</li>
+<li>Cryptography algorithms based on number theory ( encryption and decryption ).</li>
+<li>Linear programming is used to strategically allocate resources.
+<ul>
+<li>Oil company wants to know where to place the well for maximum profit</li>
+<li>Manufacturing and commercial enterprise allocating strategy</li>
+<li>An airline wants to know the flight in the least expensive way.</li>
+<li>A political candidate wants to know where to spend money on comagine ads to increase the chance of winning an election.</li>
+</ul>
+</li>
+<li>Graph algorithms
+<ul>
+<li>GPS device</li>
+</ul>
+</li>
+<li>Dynamic programming
+<ul>
+<li>AI algorithm that plays checkers</li>
+</ul>
+</li>
+<li>K-nearest neighbors
+<ul>
+<li>Recommendations system</li>
+</ul>
+</li>
+</ul>
+<p>There are some problems which can not be solved in a timely manner. These problems are categorized as NP-complete problems.</p>
+<h3 id="abstract-data-type">Abstract Data Type</h3>
+<p>A generic low level computer language deals with ones and zeros, boolean logics like ANDs and ORs, IF-statements and GOTO-statements. But an algorithm talks about abstract objects as integers, real numbers, strings, sets, stacks, graphs and trees.</p>
+<p>Abstract operations such as <strong>sort the list</strong>, <strong>pop the stack</strong>, logical relationships like greater than, prefix, subset, connected and child
+Every modern programming language  has ADTs built into them.</p>
+<h3 id="correctness-of-an-algorithm">Correctness of an algorithm</h3>
+<p>An algorithm is correct for a problem based on the correct output it generates after a series of logical steps it goes through from proper input. The correctness of an algorithm should be transparent.</p>
+<h3 id="running-time-of-an-algorithm">Running time of an algorithm</h3>
+<p>It is not just enough to produce a correct output, It should be completed in a reasonable amount of time and memory space.</p>
+<p>The runtime of an algorithm is a function from the size n of the inputs vs number of operations the computations must do.</p>
+<p><strong>Feasible</strong> algorithms are time(n) = O(n<sup>2</sup>)  (polynomial).  “BIG OH of n square“<br />
+<strong>Infeasible</strong> algorithms are time(n) =  O(2<sup>n</sup>) (exponential). “BIG OH of 2 rise to n”</p>
+<script src="https://cdn.jsdelivr.net/npm/chart.js&#64;3.5.1/dist/chart.min.js"></script>
+<div style="min-heigh:600; min-width:900">
+  <canvas id="myChart" width="400" height="400"></canvas>
+</div>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+
+
+const worstCase = [1,60,70,80,90,100];
+const averageCase = [1,40,50,60,70];
+const bestCase = [1,10,20,30,40];
+
+
+// http://stackoverflow.com/questions/962802#962890
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if(top) while(--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
+  }
+  return array;
+}
+
+const data = {
+  labels: [1,2,3,4,5,6],
+  datasets: [{
+    label: 'Worst Case',
+    data: worstCase,
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+      tension: 0.4
+  },
+  {
+    label: 'Average Case',
+    data: averageCase,
+    fill: false,
+    borderColor: '#f67019',
+      tension: 0.4
+  },
+  {
+    label: 'Best Case',
+    data: bestCase,
+    fill: false,
+    borderColor: '#8549ba',
+      tension: 0.4
+  }]
+};
+
+const config = {
+  responsive: true,
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Algorithm Analysis'
+      },
+    },
+    interaction: {
+      intersect: false,
+    },
+    scales: {
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: "Input N"
+        },
+        suggestedMin: -10,
+        suggestedMax: 200
+      },
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Number Of Operations'
+        },
+        suggestedMin: -10,
+        suggestedMax: 110
+      }
+    }
+  }
+};
+
+var myChart = new Chart(ctx, config);
+
+
+</script>
+<p><strong>Worst case complexity</strong> : maximum number of steps taken in for size of n.<br />
+<strong>Best case complexity</strong> : minimum number of steps taken in for size of n.<br />
+<strong>Average case complexity</strong>: average number of steps taken in for size of n.</p>
+<p>Worst case complexity is most useful out of this, In best case even worst case algorithms(brute force)  works fine. What happens when we have a larger input size? such that in the worst case.</p>
+<p>Best, worst and average case of an algorithm are numerical functions working with them requires precision  Like :</p>
+<ul>
+<li>Ups and downs in a graph ( when we draw this functions on a graph for each case )</li>
+<li>Too many details to specify accurately.</li>
+</ul>
+<p>It is much easier to talk in terms of simple <strong>upper</strong> and <strong>lower bounds</strong> of time complexity functions using <strong>“BIG OH”</strong> notations; we can simply ignore details which will not help us in comparing between different algorithms.</p>
+
+            </div>
+          </div>
+        </div>
+
+
+        
+   <!-- footer -->
+    <footer class="p-16 flex flex-row space-x-10  bg-gradient-to-br  from-gray-800  to-gray-900  text-gray-500 ">
+      <div class="hidden md:block">
+        <div class="m-2 py-12  px-6 bg-gray-800 hover:shadow-2xl hover:shadow-gray-800/50
+        hover:-translate-y-1 duration-300  hover:scale-100 ">
+          <img src="../img/logo.png" alt="logo" class="h-20 w-19" />
+        </div>
+        <div>
+        </div>
+      </div>
+
+       <div class="flex justify-center flex-col ">
+          <p> Copyright {@} 2021 </p>
+          <span class="flex flex-row space-x-3">
+              <p> Rss Feed </p>
+              <p> Atom Feed </p>
+          </span>
+          <p> Generated by Statiq </p>
+       </div>
+    </footer>
+
+
+        
+        
+
+        <script src="/js/navigation.js"></script>
+    </body>
+</html>

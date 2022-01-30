@@ -4,7 +4,438 @@
 	<title />
 	<link rel="self" href="/" />
 	<rights>2022</rights>
-	<updated>2022-01-30T12:02:28Z</updated>
+	<updated>2022-01-30T12:28:41Z</updated>
+	<entry>
+		<id>/posts/algorithmanalisys</id>
+		<title>Algorithm Analysis</title>
+		<link href="/posts/algorithmanalisys" />
+		<updated>2021-10-02T17:07:32Z</updated>
+		<content>&lt;h1 id="introduction-to-algorithms"&gt;Introduction to algorithms&lt;/h1&gt;
+&lt;p&gt;In layman's terms An &lt;strong&gt;algorithm&lt;/strong&gt; is a set of instructions to complete a task. With well defined specification of problems with input and output.
+We can see algorithms as tools to solve well defined computational problems.&lt;/p&gt;
+&lt;p&gt;Some of the &lt;strong&gt;example problems&lt;/strong&gt; which can be solved by algorithms :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Human genome.&lt;/li&gt;
+&lt;li&gt;Route finding algorithms.&lt;/li&gt;
+&lt;li&gt;Cryptography algorithms based on number theory ( encryption and decryption ).&lt;/li&gt;
+&lt;li&gt;Linear programming is used to strategically allocate resources.
+&lt;ul&gt;
+&lt;li&gt;Oil company wants to know where to place the well for maximum profit&lt;/li&gt;
+&lt;li&gt;Manufacturing and commercial enterprise allocating strategy&lt;/li&gt;
+&lt;li&gt;An airline wants to know the flight in the least expensive way.&lt;/li&gt;
+&lt;li&gt;A political candidate wants to know where to spend money on comagine ads to increase the chance of winning an election.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Graph algorithms
+&lt;ul&gt;
+&lt;li&gt;GPS device&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Dynamic programming
+&lt;ul&gt;
+&lt;li&gt;AI algorithm that plays checkers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;K-nearest neighbors
+&lt;ul&gt;
+&lt;li&gt;Recommendations system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are some problems which can not be solved in a timely manner. These problems are categorized as NP-complete problems.&lt;/p&gt;
+&lt;h3 id="abstract-data-type"&gt;Abstract Data Type&lt;/h3&gt;
+&lt;p&gt;A generic low level computer language deals with ones and zeros, boolean logics like ANDs and ORs, IF-statements and GOTO-statements. But an algorithm talks about abstract objects as integers, real numbers, strings, sets, stacks, graphs and trees.&lt;/p&gt;
+&lt;p&gt;Abstract operations such as &lt;strong&gt;sort the list&lt;/strong&gt;, &lt;strong&gt;pop the stack&lt;/strong&gt;, logical relationships like greater than, prefix, subset, connected and child
+Every modern programming language  has ADTs built into them.&lt;/p&gt;
+&lt;h3 id="correctness-of-an-algorithm"&gt;Correctness of an algorithm&lt;/h3&gt;
+&lt;p&gt;An algorithm is correct for a problem based on the correct output it generates after a series of logical steps it goes through from proper input. The correctness of an algorithm should be transparent.&lt;/p&gt;
+&lt;h3 id="running-time-of-an-algorithm"&gt;Running time of an algorithm&lt;/h3&gt;
+&lt;p&gt;It is not just enough to produce a correct output, It should be completed in a reasonable amount of time and memory space.&lt;/p&gt;
+&lt;p&gt;The runtime of an algorithm is a function from the size n of the inputs vs number of operations the computations must do.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feasible&lt;/strong&gt; algorithms are time(n) = O(n&lt;sup&gt;2&lt;/sup&gt;)  (polynomial).  “BIG OH of n square“&lt;br /&gt;
+&lt;strong&gt;Infeasible&lt;/strong&gt; algorithms are time(n) =  O(2&lt;sup&gt;n&lt;/sup&gt;) (exponential). “BIG OH of 2 rise to n”&lt;/p&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js&amp;#64;3.5.1/dist/chart.min.js"&gt;&lt;/script&gt;
+&lt;div style="min-heigh:600; min-width:900"&gt;
+  &lt;canvas id="myChart" width="400" height="400"&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var ctx = document.getElementById('myChart').getContext('2d');
+
+
+const worstCase = [1,60,70,80,90,100];
+const averageCase = [1,40,50,60,70];
+const bestCase = [1,10,20,30,40];
+
+
+// http://stackoverflow.com/questions/962802#962890
+function shuffle(array) {
+  var tmp, current, top = array.length;
+  if(top) while(--top) {
+    current = Math.floor(Math.random() * (top + 1));
+    tmp = array[current];
+    array[current] = array[top];
+    array[top] = tmp;
+  }
+  return array;
+}
+
+const data = {
+  labels: [1,2,3,4,5,6],
+  datasets: [{
+    label: 'Worst Case',
+    data: worstCase,
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+      tension: 0.4
+  },
+  {
+    label: 'Average Case',
+    data: averageCase,
+    fill: false,
+    borderColor: '#f67019',
+      tension: 0.4
+  },
+  {
+    label: 'Best Case',
+    data: bestCase,
+    fill: false,
+    borderColor: '#8549ba',
+      tension: 0.4
+  }]
+};
+
+const config = {
+  responsive: true,
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Algorithm Analysis'
+      },
+    },
+    interaction: {
+      intersect: false,
+    },
+    scales: {
+      x: {
+        display: true,
+        title: {
+          display: true,
+          text: "Input N"
+        },
+        suggestedMin: -10,
+        suggestedMax: 200
+      },
+      y: {
+        display: true,
+        title: {
+          display: true,
+          text: 'Number Of Operations'
+        },
+        suggestedMin: -10,
+        suggestedMax: 110
+      }
+    }
+  }
+};
+
+var myChart = new Chart(ctx, config);
+
+
+&lt;/script&gt;
+&lt;p&gt;&lt;strong&gt;Worst case complexity&lt;/strong&gt; : maximum number of steps taken in for size of n.&lt;br /&gt;
+&lt;strong&gt;Best case complexity&lt;/strong&gt; : minimum number of steps taken in for size of n.&lt;br /&gt;
+&lt;strong&gt;Average case complexity&lt;/strong&gt;: average number of steps taken in for size of n.&lt;/p&gt;
+&lt;p&gt;Worst case complexity is most useful out of this, In best case even worst case algorithms(brute force)  works fine. What happens when we have a larger input size? such that in the worst case.&lt;/p&gt;
+&lt;p&gt;Best, worst and average case of an algorithm are numerical functions working with them requires precision  Like :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ups and downs in a graph ( when we draw this functions on a graph for each case )&lt;/li&gt;
+&lt;li&gt;Too many details to specify accurately.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It is much easier to talk in terms of simple &lt;strong&gt;upper&lt;/strong&gt; and &lt;strong&gt;lower bounds&lt;/strong&gt; of time complexity functions using &lt;strong&gt;“BIG OH”&lt;/strong&gt; notations; we can simply ignore details which will not help us in comparing between different algorithms.&lt;/p&gt;
+</content>
+		<summary>basics of algorithm Analysis.</summary>
+	</entry>
+	<entry>
+		<id>/posts/phases-of-compiler-part-2</id>
+		<title>Introduction to language processing and phases of compiler Part - 2</title>
+		<link href="/posts/phases-of-compiler-part-2" />
+		<updated>2021-09-20T02:00:04Z</updated>
+		<content>&lt;h1 id="language-processing"&gt;Language processing&lt;/h1&gt;
+&lt;p&gt;Before we start understanding the phases of the compiler we need to have a basic understanding of automata theory.&lt;/p&gt;
+&lt;p&gt;Automata theory is the study of abstract computing devices or machines before there were computers in the late 1930s.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Automata&lt;/strong&gt; : The purpose of a state is to remember the relevant portion of a system's history. Since there are only a finite number of states. we could implement a state of automata as  hardware as a circuit or as a simple form of program.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt; : A nontrivial finite automaton is an on/off switch.&lt;/p&gt;
+&lt;h1 id="a-little-part-of-computer-science-history"&gt;A little part of computer science History.&lt;/h1&gt;
+&lt;p&gt;I want to introduce Alan Turing. He is considered to be the father of computer science. Alan studied abstract machines that have all the capabilities of today’s computers. Turing's goal was to describe precisely what a computing machine could do and what it could not do.&lt;/p&gt;
+&lt;p&gt;His conclusions apply to not only abstract computers but today's modern computers too. In the late 1940s to 1950s finite automata were used to model brain functions &lt;a href="https://www.sciencedirect.com/science/article/abs/pii/S0020737375800137"&gt;Research Paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;In the &lt;strong&gt;late 1950s&lt;/strong&gt;, a linguist named &lt;a href="https://en.wikipedia.org/wiki/Noam_Chomsky"&gt;N. Chomsky&lt;/a&gt; began the study of formal “grammar”. These are not machines but these grammars have a close relationship with abstract automata. These grammars are an important part of modern software components.&lt;/p&gt;
+&lt;p&gt;In &lt;strong&gt;1969&lt;/strong&gt;, &lt;a href="https://en.wikipedia.org/wiki/Stephen_Cook"&gt;S. Cook&lt;/a&gt; extended Turning's study of computing. He was able to separate those problems that can be solved efficiently by computers from the problems that can be solved but take so much time that computers are useless. These problems are classified as “NP-hard” problems. Even if we have the hardware according to &lt;a href="https://en.wikipedia.org/wiki/Moore%27s_law"&gt;Moore's law&lt;/a&gt; we could not even solve these problems.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;All this research led to the modern computing age.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Turning machine&lt;/strong&gt; helps us understand what we can expect from the software. The theory of intractable problems will help us decide to head-on and write a program to solve it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Finite automata&lt;/strong&gt; are useful models which help us &lt;strong&gt;create software&lt;/strong&gt; for designing and &lt;strong&gt;checking the digital circuits&lt;/strong&gt;, &lt;strong&gt;lexical analyzer&lt;/strong&gt;, &lt;strong&gt;scanning large bodies of text&lt;/strong&gt;, &lt;strong&gt;verifying systems&lt;/strong&gt;, &lt;strong&gt;communication protocols&lt;/strong&gt;, and &lt;strong&gt;protocols encryption&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id="syntax-definition"&gt;Syntax Definition&lt;/h1&gt;
+&lt;p&gt;A context-free grammar is used to specify/define the syntax of a language. known as grammar. It is made up  of &lt;em&gt;terminals&lt;/em&gt;, &lt;em&gt;nonterminals&lt;/em&gt;, a &lt;em&gt;start symbol&lt;/em&gt;, and &lt;em&gt;production&lt;/em&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let consider an example of palindromes expressed in context-free grammar notation.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Below are the rules for a palindrome string.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;rules&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;P   →   ε&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P   →   0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P   →   1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P   →    0P0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;P   →   1P1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Palindromes include the string ε, 0, and 1.  The last two rules form the indicative part of the definition.&lt;/p&gt;
+&lt;p&gt;CFG as G has four components&lt;/p&gt;
+&lt;p&gt;G =  ( V, T, P, S) where.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;T - Terminals&lt;/strong&gt;  basic symbols from which strings are formed. “Token name” is a almost the same as“terminal”. Tokens are the first components of the output of the token by the lexical analyzer. Terminals are the base of all the symbols in the grammar.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;example&lt;/em&gt; above This set was {0,1}. We call this alphabet/terminals/terminal symbols all mean the same thing&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;V -  NonTerminals&lt;/strong&gt;  a finite set of variables, also sometimes called syntactic variables.Set of strings of terminals are represented by each non-terminal. This belongs to syntactic categories.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;example&lt;/em&gt; above there was only one variable, P, which we used to represent the class of palindromes over the alphabet {0,1}.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;S - Start Symbol&lt;/strong&gt; one of the variables represents the language being defined; it is called the start symbol.&lt;/p&gt;
+&lt;p&gt;In the &lt;em&gt;example&lt;/em&gt; above the only variable P, is the start symbol.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;P - Production&lt;/strong&gt; finite set of production or rules that represent the recursive definition of a language.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Where each production consists of:
+&lt;em&gt;nonterminal&lt;/em&gt;:- called the head&lt;br /&gt;
+&lt;em&gt;arrow&lt;/em&gt;:- left side of the production&lt;br /&gt;
+&lt;em&gt;sequence&lt;/em&gt;:- of terminals &amp;amp;&amp;amp;/|| nonterminals called the body&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Production symbol&lt;/strong&gt;:   →&lt;/p&gt;
+&lt;p p=""&gt;The grammar for G(palindrome) for the palindromes is represented by&lt;br /&gt;
+G(palindrome) = (, {0,1}, A,P) where A represents the set of productions.&lt;/p&gt;
+&lt;h1 id="parse-trees"&gt;Parse Trees&lt;/h1&gt;
+&lt;p&gt;shows how a &lt;strong&gt;start symbol&lt;/strong&gt; of grammar derives a string in the language.&lt;/p&gt;
+&lt;p&gt;If nonterminal A has a production A   →  XY Z, then a parse tree may have an interior node labeled A with three children labeled X, Y , and Z, from left to right:&lt;/p&gt;
+&lt;a href="https://imgur.com/HhW9jxf"&gt;
+&lt;img src="https://i.imgur.com/HhW9jxf.png" title="source: imgur.com" /&gt;
+&lt;/a&gt;
+&lt;p&gt;Learn more about tree data structure  here, Tree (data structure)&lt;/p&gt;
+&lt;p&gt;Formally, given a context-free grammar, a parse tree according to the grammar is a tree with the following properties:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;The root node is labeled by the start symbol of the grammer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Each leaf is labeled by a terminal or by  ε.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Each interior node is labeled by a non-terminal of the grammar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If A is the non-terminal labeling some interior node and M1,  M2,....Mn are the labels of the children of that node from left to right, then there must be a production  A   →   M1 M2…... Mn. Here,&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;M1, M2…..Mn. Here, M1, M2,......, MN each stands for a symbol that is either a terminal or a nonterminal. As a special case, if A   →  ε  is a production,   then a node labeled A may have a single child labeled.&lt;/p&gt;
+&lt;h1 id="syntax-directed-translation"&gt;Syntax-Directed Translation&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Analysis phase&lt;/strong&gt; breaks up the program into pieces and produces an internal representation for it, called intermediate code. &lt;strong&gt;Synthesis phase&lt;/strong&gt;  translates/compiles the IC(intermediate code) into the target program. &lt;strong&gt;Analysis&lt;/strong&gt; is broken down to “&lt;strong&gt;syntax&lt;/strong&gt;” , “&lt;strong&gt;semantics&lt;/strong&gt;” . Syntax of a programming language describes the form of its programs. Semantics of languages defines what its programs mean. For specifying  syntax we used notation called &lt;strong&gt;context-free grammars&lt;/strong&gt; or &lt;strong&gt;BNF&lt;/strong&gt; ( Backus-Naur Forms)&lt;/p&gt;
+&lt;p&gt;Grammar-oriented compiling technique called &lt;strong&gt;syntax-directed translation&lt;/strong&gt;.
+&lt;strong&gt;Syntax-Directed Translation&lt;/strong&gt; to evaluate expressions and to build syntax trees for programming constructs.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;SDT is a huge topic on it’s own which is outside the scope of this blog post, I will add a link here once I blog about it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;For now just take a look at an example. Since we already know what CFG is, the same grammar is used in SDT but with some rules or language construct attached to the grammar called as attributes which are known as Syntax-Directed Definition (SSD).&lt;/p&gt;
+&lt;p&gt;If N is a symbol and k is one of its attributes, Then we write N.k to denote the value of a at a particular parse-tree. Attributes may be of any kind, numbers, types, table references or strings and code (IL).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Wiki
+Syntax-directed translation refers to a method of compiler implementation where the source language translation is completely driven by the parser.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt; :-
+Let us define a grammar that we can translate a basic arithmetic expression from infix-to-postfix. Production rules will look like below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Production rule.&lt;/strong&gt;&lt;br /&gt;
+E → E1 + T&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Semantic rule.&lt;/strong&gt;
+E.Code  = E1.Code || T.Code || ‘+’&lt;/p&gt;
+&lt;p&gt;E and T are nonterminals according to CFG and E, E1 and T has a string-valued attribute code&lt;/p&gt;
+&lt;a href="https://imgur.com/o9PlA65"&gt;
+&lt;img src="https://i.imgur.com/o9PlA65.png" title="source: imgur.com" /&gt;
+&lt;/a&gt;
+&lt;p&gt;i will try to give you overview of above diagram. Later we will implement with C#/Typescript some of the phases, Maybe we will bulid a simulator that gives developer ability to build languages on the fly with visual studio code.&lt;/p&gt;
+&lt;h1 id="front-end-phase"&gt;Front End Phase&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Lexical analyzer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Lexical analyzer reads the source program and groups them into lexemes and generates the tokens for each lexem.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Syntax analyzer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A syntax of programming language constructs can be specified by context-free grammar or BNF notation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Grammar gives precise and easy understanding of syntactic specification of programming language.&lt;/li&gt;
+&lt;li&gt;A known structure ( structure imparted ) to a language by a specific grammar is useful to translate from source to object notation.&lt;/li&gt;
+&lt;li&gt;Grammar helps language to evolve.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;syntactic structure of a well-formed programming language.&lt;/p&gt;
+&lt;p&gt;A program is made up of functions, a function is made up of declarations and statements. A statement out of expressions.&lt;/p&gt;
+&lt;p&gt;In layman's terms when we make any syntactic error like missing a semicolon  or misspelled keywords which can be analyzed and handle the error and throw them back all the analyzed errors.&lt;/p&gt;
+&lt;p&gt;CFG : are used to define the grammatical rules of the language.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Algorithms&lt;/strong&gt; : -&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Top-down parsing
+&lt;ul&gt;
+&lt;li&gt;Prase tree .&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Bottom-up parsing:
+&lt;ul&gt;
+&lt;li&gt;Prase tree.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Tools&lt;/strong&gt; :-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.man7.org/linux/man-pages//man1/yacc.1p.html"&gt;yacc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://man7.org/linux/man-pages/man1/lex.1p.html"&gt;lex&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Lex-yacc&lt;/strong&gt; :-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Is used to produce lexical analyzers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Semantic analyzer&lt;/strong&gt; Analyzes the meaning of the code.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Intermediate code generator&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Will generate the three address code. Uses DAG, direct acrylic graph.
+We perform this operation in this phase, type checking, conversions, overloading of function and operators, control flow, switch statements.&lt;/p&gt;
+&lt;h1 id="optional-end"&gt;Optional End&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Code Optimizer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Compiler optimization of intermediate code uses DAG to represent the basic blocks.&lt;/p&gt;
+&lt;p&gt;Elements the code on principle of graph theory.
+Note that all of this optimization are performed on three address instruction assemblies like language.&lt;/p&gt;
+&lt;p&gt;Algorithms :-&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Graph coloring&lt;/li&gt;
+&lt;li&gt;Graph theory.&lt;/li&gt;
+&lt;li&gt;DAG&lt;/li&gt;
+&lt;li&gt;Peephole optimization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="back-end"&gt;Back End&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Code Generator&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Takes the IR ( intermediate representation ) by the front end of the compiler along with relevant symbol table information.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine Dependent code optimizer&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Uses the sample principles has code optimizer phase. Uses the graph theory, depth first ordering of flow graphs, classifications of edges, flow graphs, depth first order.&lt;/p&gt;
+</content>
+		<summary>continuation of part 1</summary>
+	</entry>
+	<entry>
+		<id>/posts/introductionandphasesofcompilerpartone</id>
+		<title>Introduction to language processing and Phases of compiler</title>
+		<link href="/posts/introductionandphasesofcompilerpartone" />
+		<updated>2021-01-30T00:00:00Z</updated>
+		<content>&lt;p&gt;Compiler is one of the fascinating programs that has been built ex: &lt;a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection"&gt;GCC&lt;/a&gt;, it is a direct application of &lt;a href="https://en.wikipedia.org/wiki/Automata_theory"&gt;Automata Theory&lt;/a&gt; in source code analysis and In lame terms compilers just translate from high level language to low level language (&lt;a href="https://en.wikipedia.org/wiki/Machine_code"&gt;Machine Level Code&lt;/a&gt;) binary form, Which CPU can understand.&lt;/p&gt;
+&lt;p&gt;Compilation process has different phases which can be broken down to front end ( parsing source code and analysis with automata theory), middle end (code optimization phase) and back end (&lt;a href="https://en.wikipedia.org/wiki/X86"&gt;x86&lt;/a&gt;  &lt;a href="https://en.wikipedia.org/wiki/Intel"&gt;INTEL&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/Advanced_Micro_Devices"&gt;AMD&lt;/a&gt; , &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;ARM&lt;/a&gt; &lt;a href="https://en.wikipedia.org/wiki/Apple_M1"&gt;APPLE M1 CHIP&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Intel, AMD X86 instruction set &lt;a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer"&gt;CISC&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Apple M1 ARM instruction set &lt;a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer"&gt;RISC&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="fun-fact"&gt;Fun Fact :&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The reason why the Apple M1 chip is faster is because of this ARM architecture but they added much more than that. Switching from X86 to ARM was the huge step for the &lt;a href="https://www.apple.com/mac/m1/"&gt;Apple M1 chip&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Reduced_instruction_set_computer"&gt;RISC&lt;/a&gt; is much faster than &lt;a href="https://en.wikipedia.org/wiki/Complex_instruction_set_computer"&gt;CISC&lt;/a&gt; and &lt;a href="https://en.wikipedia.org/wiki/ARM_architecture"&gt;ARM&lt;/a&gt;(&lt;a href="https://www.apple.com/mac/m1/"&gt;Apple M1 chip&lt;/a&gt;) consumes less power compared to &lt;a href="https://en.wikipedia.org/wiki/X86"&gt;x86&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id="research-papers"&gt;Research papers&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/LLVM"&gt;LLVM&lt;/a&gt; (low level virtual machine) research &lt;a href="https://llvm.org/pubs/2004-01-30-CGO-LLVM.pdf"&gt;paper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://blog.llvm.org/"&gt;llvm.org&lt;/a&gt; interestingly generated with &lt;a href="https://golang.org/"&gt;go lang&lt;/a&gt; &lt;a href="https://gohugo.io/"&gt;Hugo framework&lt;/a&gt; which is a static site generator, The blog you are reading is generated by a static site generator which is built with &lt;a href="https://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29"&gt;C#&lt;/a&gt; web framework called &lt;a href="https://statiq.dev/"&gt;statiq&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="what-is-llvm"&gt;What is LLVM?&lt;/h3&gt;
+&lt;p&gt;I am not going to explain what it is right now &lt;a href="https://llvm.org/"&gt;llvm.org&lt;/a&gt; has everything you need to know about it. LLVM is a framework to develop compilers commercial and open source projects&lt;/p&gt;
+&lt;p&gt;According to wiki&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The LLVM compiler infrastructure project is a set of compiler and toolchain technologies, which can be used to develop a front end for any programming language and a back end for any instruction set architecture. LLVM is designed around a language-independent intermediate representation (IR) that serves as a portable, high-level assembly language that can be optimized with a variety of transformations over multiple passes.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h6 id="intresting-reserch-pepares-to-read"&gt;Intresting reserch pepares to read.&lt;/h6&gt;
+&lt;p&gt;designing compilers for quantum computing &lt;a href="https://arxiv.org/pdf/2012.09680.pdf"&gt;research paper&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;ML guided compiler optimization framework &lt;a href="https://arxiv.org/pdf/2101.04808.pdf"&gt;research paper&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Microsoft research papers on &lt;a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/09/static-typescript-draft2.pdf"&gt;Static TypeScript&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;C# compiler &lt;a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2003-32.pdf"&gt;research papers&lt;/a&gt;
+, &lt;a href="https://github.com/dotnet/fsharp/blob/main/docs/compiler-guide.md"&gt;F# Compiler&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Before you read that research paper, Which i have added for reader reference, I will try to explain source language compilation and how it works under the hood as simply as possible.&lt;/p&gt;
+&lt;h1 id="compiler"&gt;Compiler&lt;/h1&gt;
+&lt;p&gt;Compiler is a program that translates into source code which is written in human readable language ( high level programming such as c,c++) into target program ( low level code, executable). Reports error in the source code during the process.&lt;/p&gt;
+&lt;p&gt;According to wiki&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In computing, a compiler is a computer program that translates computer code written in one programming language (the source language) into another language (the target language). The name &amp;quot;compiler&amp;quot; is primarily used for programs that translate source code from a high-level programming language to a lower level language (e.g., assembly language, object code, or machine code) to create an executable program.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/APZ7qu5"&gt;&lt;img src="https://i.imgur.com/APZ7qu5.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="interpreter"&gt;Interpreter&lt;/h1&gt;
+&lt;p&gt;Interpreter is another type of language translator just like a compiler but instead of compiling down the source code to target program, interpreter interprets the source code line by line, on user inputs and produces outputs which makes the interpreter much more efficient in error diagnostics.&lt;/p&gt;
+&lt;p&gt;According to wiki&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In computer science, an interpreter is a computer program that directly executes instructions written in a programming or scripting language, without requiring them previously to have been compiled into a machine language program.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/uNrBONd"&gt;&lt;img src="https://i.imgur.com/uNrBONd.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="transpiler"&gt;Transpiler&lt;/h1&gt;
+&lt;p&gt;Transpiler is source code to source code language transpilation ex:- Typescript to javascript is know has transpilation, Babeljs is a transpiler which takes the &lt;a href="https://javascript.info/"&gt;modern javascript&lt;/a&gt; code, javascript is also know has &lt;a href="https://en.wikipedia.org/wiki/ECMAScript"&gt;ECMAscript&lt;/a&gt;.&lt;/p&gt;
+&lt;h6 id="example"&gt;example&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://babeljs.io/"&gt;https://babeljs.io/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="further-reading"&gt;Further reading&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Babel_(transcompiler)"&gt;Babel (transcompiler) - Wikipedia&lt;/a&gt;, &lt;a href="https://en.wikipedia.org/wiki/Source-to-source_compiler"&gt;Source-to-source compiler - Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/3vf6RU5"&gt;&lt;img src="https://i.imgur.com/3vf6RU5.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="hybrid-compiler"&gt;Hybrid compiler&lt;/h1&gt;
+&lt;p&gt;Hybrid compiler is a combination of compiler and interpreter which is interpreted by virtual machine. Ex: C# source program first compiled into IL intermediate language. In the case of java it produces bytecode which is interpreted by a virtual machine. JIT compilers translate the bytecodes into machine language immediately.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/NDTfzRO"&gt;&lt;img src="https://i.imgur.com/NDTfzRO.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;C# and java uses a hybrid compiler under the hood, it is not a compiler or an interpreter but a combination of both I will try to summarize has much information as possible about C# compilation process. I will not go in details about CLR this time. Let’s take a moment to read about it.&lt;/p&gt;
+&lt;h3 id="common-language-infrastructure-and-common-language-runtime-of-microsoft.net-framework"&gt;Common Language Infrastructure and Common Language Runtime of Microsoft .NET Framework&lt;/h3&gt;
+&lt;p&gt;CLI provides a language neutral platform for application development CLR is an execution engine for .NET Framework,  .NET program compiles down to IL ( intermediate Language) during execution JIT compiles into CPU &lt;a href="https://llvm.org/docs/CompilerWriterInfo.html"&gt;hardware architecture&lt;/a&gt; specific machine code.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/HPaKVoP"&gt;&lt;img src="https://i.imgur.com/HPaKVoP.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now let’s look an example how a C# source code looks like in different phase of compilation.&lt;/p&gt;
+&lt;h6 id="example-c-hello-world-program"&gt;example C# hello world program&lt;/h6&gt;
+&lt;p&gt;below snip is written in a &lt;a href="https://www.linqpad.net/"&gt;linqpad&lt;/a&gt; which does not needed to include namespaces.&lt;/p&gt;
+&lt;h1 id="source-program"&gt;Source program&lt;/h1&gt;
+&lt;pre&gt;&lt;code class="language-C#"&gt;void Main()
+{
+    Console.WriteLine(&amp;quot;Hello World&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id="abstract-syntax-tree"&gt;Abstract Syntax Tree&lt;/h1&gt;
+&lt;p&gt;Abstract syntax tree helps in generating intermediate-code in this CIL ( common intermediate language ).&lt;/p&gt;
+&lt;h6 id="i-will-discuss-how-to-create-a-ast-in-part-2-of-this-blog-post"&gt;I will discuss how to create a AST in part - 2 of this blog post.&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/o5S31y2"&gt;&lt;img src="https://i.imgur.com/o5S31y2.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="syntax-definition"&gt;Syntax Definition&lt;/h1&gt;
+&lt;p&gt;Context free grammar is used to define the rules for a language. In lame terms a set of rules written in a formal language, which are defined from automata theory or we can say theory of computer science. The vocabulary used to define this is called production rules. That describes syntax of a programming language or a string.&lt;/p&gt;
+&lt;h6 id="dont-freek-out-if-you-dont-understand-about-cfg-i-will-explain-later-in-this-blog-post"&gt;Don't freek out if you don't understand about CFG, i will explain later in this blog post. :)&lt;/h6&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/gpH4tg1"&gt;&lt;img src="https://i.imgur.com/gpH4tg1.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="intermediate-code-generation"&gt;Intermediate Code Generation&lt;/h1&gt;
+&lt;p&gt;Before I start describing how we got from AST to IL, We need to deep dive into the Run-Time environments of a VM or and &lt;a href="https://llvm.org/docs/CompilerWriterInfo.html"&gt;CPU architecture&lt;/a&gt; which are out of scope for this blog. I will link it here once I write about it.&lt;/p&gt;
+&lt;p&gt;As of now to arrive at this point we have to go throw the paraser -&amp;gt; static checking -&amp;gt; Intermediate Code Generator. All of this are done sequentially; sometimes they can be combined and folded into parsing. &lt;a href="https://en.wikipedia.org/wiki/Directed_acyclic_graph"&gt;DAG&lt;/a&gt; just like AST are used for arithmetic expressions evaluation.&lt;/p&gt;
+&lt;p&gt;Front end analyzes a source program and creates an intermediate representation. From which Back end generates the target code.&lt;/p&gt;
+&lt;p&gt;A compiler for language i and machine j can be built by combining the front end for language i with the back end for machine j.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-x86asm"&gt;IL_0000:  ldstr       &amp;quot;Hello World&amp;quot;
+IL_0005:  call        System.Console.WriteLine
+IL_000A:  ret
+
+get_QueryCancelToken:
+IL_0000:  ldarg.0
+IL_0001:  ldfld       UserQuery._queryCancelTokenOrigin
+IL_0006:  callvirt    System.Lazy&amp;lt;System.Threading.CancellationToken&amp;gt;.get_Value
+IL_000B:  ret
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="static-checking-and-type-checking"&gt;Static Checking and Type Checking&lt;/h2&gt;
+&lt;p&gt;Static checking is a consistency check that is done during compilation which catches the programming errors early in the compilation process. Static checking includes Syntactic checking and type checking, type rules of a language assure that an operator is applied to the right number and type of operands.&lt;/p&gt;
+&lt;p&gt;A compiler needs to assign a type expression to each component of the source program and it has to conform to a collection of logical rules that is called the type system for the source language type and a sound type system elements the dynamic checking for type errors.&lt;/p&gt;
+&lt;p&gt;Rules for type checking have two forms: Synthesis and inference. Type synthesis builds up the type of an expression from the types of its subexpressions, Type inference determines the type of a language construct from the way it is used&lt;/p&gt;
+&lt;p&gt;Type conversion conversion from one type to another is said to be implicit if it is done by compiler automatically it is also called as coercionsl, conversion said to be explicit if the programmer must write something to cause the conversion.&lt;/p&gt;
+&lt;h6 id="example-1"&gt;Example&lt;/h6&gt;
+&lt;p&gt;The type of an expression E1 op E2 is determined by the operator op and the types of E1 and E2. A coercion is an implicit type conversion, such as from integer to oat. Intermediate code contains explicit type conversions to ensure an exact match between operand types and the types expected by an operator.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The above part might sound jaragon to you if you don't have any understanding of theory of computer science, Algorithms and Data Structures.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We will learn basics of automata theory, CFG, history about computer science theory, syntax definition, parse tree, SDT and SDD in part - 2 of this blog post. I will try to summarize it without any loss of information.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+	</entry>
 	<entry>
 		<id>/posts/serverlessusecases</id>
 		<title>Serverless-FaaS use cases</title>
@@ -33,5 +464,85 @@
 &lt;p&gt;serverless functions are cheap and useful they have many use cases, Even though they are stateless and has a cold start time, The technology is still getting maturing at the time of this blog is published. Amazon is adding a lot of research on this area.&lt;/p&gt;
 </content>
 		<summary>&lt;p&gt;&lt;strong&gt;Batch processing&lt;/strong&gt; an offline system, Batch processing takes a large amount of data at once and runs a bunch of jobs on it, In this scenario usually, the user will not wait for any sort of response back from the server, Jobs are scheduled and run in periodically Maybe we replace expanse on extract-transform-load(ETL)&lt;/p&gt;</summary>
+	</entry>
+	<entry>
+		<id>/posts/serverlessframeworks</id>
+		<title>Serverless Frameworks</title>
+		<link href="/posts/serverlessframeworks" />
+		<updated>2021-01-10T00:00:00Z</updated>
+		<content>&lt;h1 id="serverless-frameworks"&gt;Serverless Frameworks.&lt;/h1&gt;
+&lt;p&gt;serverless frameworks that can work on any major service cloud provider like Amazon, azure, Cloudflare etc.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Amplify Framework&lt;/strong&gt; :- &lt;a href="https://docs.amplify.aws/"&gt;Amzon Amplify&lt;/a&gt;  lib’s, tools and components for AWS-powered cloud apps in serverless specifically.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Spring Cloud Function&lt;/strong&gt;:-  &lt;a href="https://spring.io/projects/spring-cloud-function"&gt;spring framework&lt;/a&gt; with function friendly  adapters for different clouds dynamic compilation of functions and mechanisms for invoking them for HTTP and messaging source.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Claudia js&lt;/strong&gt;:- &lt;a href="https://www.claudiajs.com/"&gt;Claudiajs&lt;/a&gt;  nodejs projects  it automates some key things for deployment and configuration of the API gateway specifically.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rubyonjets&lt;/strong&gt;:- &lt;a href="https://rubyonjets.com/"&gt;Rubyonjets&lt;/a&gt;  is for building serverless with ruby language.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stackery&lt;/strong&gt;:-  &lt;a href="https://www.stackery.io/"&gt;Stackery&lt;/a&gt; for operational management like building, deployment of systems.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Iopipe&lt;/strong&gt;:-  &lt;a href="https://www.iopipe.com/"&gt;Iopipe&lt;/a&gt; used to building operating functions helps with development.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Sigma IDE&lt;/strong&gt;:- &lt;a href="https://www.slappforge.com/sigma"&gt;Slappforge&lt;/a&gt; used for building serverless systems and managing serverless systems, with graphical way to build it things.&lt;/p&gt;
+&lt;h1 id="summary"&gt;Summary&lt;/h1&gt;
+&lt;p&gt;there are many many frameworks out there that support serverless technology, In fact, every popular web programming language as some sort of open-source framework.&lt;/p&gt;
+</content>
+	</entry>
+	<entry>
+		<id>/posts/faas</id>
+		<title>What is FaaS</title>
+		<link href="/posts/faas" />
+		<updated>2021-01-09T00:00:00Z</updated>
+		<content>&lt;h1 id="what-is-serverless-cloud-computing"&gt;What is serverless cloud computing ?&lt;/h1&gt;
+&lt;p&gt;In simple terms serverless computing is bit sided code, unit of discrete components which does one thing in one fine life span. All the responsibilities are delegated to the service provider. Like amazon aws and microsoft azure.&lt;/p&gt;
+&lt;p&gt;Responsibilities like choosing an operating system, Capacity management and planning, scaling and reliability of the server anything that breaks this responsibility by the vendor is not fully serverless.&lt;/p&gt;
+&lt;p&gt;We are only responsible for maintaining the code.  Developer is no longer involved in hosting the web-app/code online ( server/cloud) no Need to maintain the computing resources like Server, RAM, CPU or any hardware infrastructure.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;,  let's talk about Azure function or AWS Lambda. As developers, we no longer have to think about which OS or language to use, deployment, and scaling with fault tolerance, logs, updates, metrics, etc. All of this is taken care of by the vendor. In this case, Microsoft or Amazon. We simply outsource these responsibilities to them.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;&lt;strong&gt;According to wikipedia&lt;/strong&gt;  Serverless computing is a cloud computing execution model in which the cloud provider allocates machine resources on demand, taking care of the servers on behalf of the their customers.
+Pricing is based on the actual amount of resources consumed by an application , However developers of serverless applications are not concerned with capacity planning, configuration, management, maintenance, operating or scaling of containers, VMs, or physical servers.&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="which-vendors-are-providing-serverless-cloud-computing"&gt;Which vendors are providing serverless cloud computing?&lt;/h1&gt;
+&lt;h2 id="aws-lambda"&gt;&lt;a href="https://aws.amazon.com/lambda/"&gt;AWS Lambda&lt;/a&gt;:&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/DnUvQLc"&gt;&lt;img src="https://i.imgur.com/DnUvQLc.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;supported languages&lt;/em&gt; node, &lt;strong&gt;java, C#, python&lt;/strong&gt;. &lt;a href="https://learn.lytics.com/documentation/product/integrations/aws/aws-kinesis/kinesis-triggers"&gt;Triggers kinesis&lt;/a&gt;, &lt;a href="https://aws.amazon.com/dynamodb/"&gt;Amazon DynamoDB&lt;/a&gt;, &lt;a href="https://aws.amazon.com/sqs/"&gt;SQS&lt;/a&gt;, &lt;a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-s3.html"&gt;Amazon S3&lt;/a&gt;, &lt;a href="https://aws.amazon.com/blogs/aws/building-serverless-pipelines-with-amazon-cloudwatch-events/"&gt;CloudWatch&lt;/a&gt;,&lt;a href="https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-cognito.html"&gt;Cognito&lt;/a&gt;, &lt;a href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"&gt;Config&lt;/a&gt;, &lt;a href="https://aws.amazon.com/lex/"&gt;lex&lt;/a&gt;. Known features dynamic scaling, Cross AZ, Custom runtimes, HTTP via API GateWay, Workflow with step functions, Extensible layers.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="azure-functions"&gt;&lt;a href="https://docs.microsoft.com/en-us/azure/azure-functions/"&gt;Azure functions&lt;/a&gt;:&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/YCXUF2s"&gt;&lt;img src="https://imgur.com/YCXUF2s.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;supported languages&lt;/em&gt; &lt;strong&gt;C#, F#, Java, Node&lt;/strong&gt;. &lt;a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-storage-blob-trigger?tabs=csharp"&gt;Azure Triggers Blob&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/services/cosmos-db/"&gt;Azure Cosmos DB&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/services/event-grid/"&gt;Azure Event Grid&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/services/event-hubs/"&gt;Azure Event Hubs&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp"&gt;Azure HTTP triggers&lt;/a&gt;, &lt;a href="https://azure.microsoft.com/en-us/services/service-bus/"&gt;Azure Service Bus&lt;/a&gt;, &lt;a href="https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer?tabs=csharp"&gt;Time Triggers&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="google-cloud"&gt;&lt;a href="https://cloud.google.com/serverless/"&gt;Google Cloud&lt;/a&gt;:&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/4UkBSLd"&gt;&lt;img src="https://imgur.com/4UkBSLd.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Supported Languages&lt;/em&gt;. &lt;strong&gt;Node, python, GO&lt;/strong&gt; Available &lt;a href="https://cloud.google.com/functions/docs/calling/http"&gt;triggers&lt;/a&gt; HTTP, &lt;a href="https://cloud.google.com/pubsub/"&gt;pub/sub&lt;/a&gt;, Storage, &lt;a href="https://cloud.google.com/firestore/"&gt;FireStore&lt;/a&gt;, &lt;a href="https://firebase.google.com/"&gt;Firebase&lt;/a&gt;, Scheduler Features to know Auto Scaled with “max” option,  Version draining,  Function can run under unique identities&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="cloudflare"&gt;Cloudflare&lt;/h2&gt;
+&lt;p&gt;Supported languages &lt;strong&gt;Javascript, webassembly&lt;/strong&gt; Available triggers HTTP Features to know Deploy to 160+ edge data centers, Respond in milliseconds, Workers kv for close data.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="installable-faas"&gt;Installable FaaS&lt;/h2&gt;
+&lt;p&gt;If your enterprise can effort a data center then consider this  opens source FaaS platforms  Knative, Apache openwhisk, Kubeless, Pivotal function service, IBM cloud private, GitLab&lt;/p&gt;
+&lt;h1 id="how-much-does-it-cost-do-you-need-serverless"&gt;How much does it cost? Do you need serverless?&lt;/h1&gt;
+&lt;p&gt;Cost estimation for your serverless function add in the requirement and it will estimate a cost for you.
+&lt;a href="http://serverlesscalc.com/"&gt;serverlesscalc.com&lt;/a&gt;, If you think you need a serverless services? Should your webapp should be a serverless? Then you can check that with the below link. &lt;a href="https://servers.lol/"&gt;servers.lol&lt;/a&gt;.&lt;/p&gt;
+</content>
+	</entry>
+	<entry>
+		<id>/posts/cloudcomputing</id>
+		<title>What is Cloud Computing</title>
+		<link href="/posts/cloudcomputing" />
+		<updated>2021-01-05T00:00:00Z</updated>
+		<content>&lt;h1 id="what-is-cloud-computing"&gt;What is cloud computing?&lt;/h1&gt;
+&lt;p&gt;In a nutshell cloud computing allows access to a large amount of computing power in a fully virtualized manner. The aim of this technology is to deliver computing as a utility.
+Utility computing is a business model of on-demand delivery of computing power ( pay-as-you-go).&lt;/p&gt;
+&lt;p&gt;Cloud computing provides multiple services initially offered by microsoft, google and amazon based on a model where computing infrastructure is viewed as a “cloud”.&lt;/p&gt;
+&lt;p&gt;Principle of cloud computing behind this model is to offer computing, storage and software as service.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Professor Dr. Rajkumar Buyya's Cyberhome says “Cloud is a parallel and distributed computing system consisting of a collection of inter-connected and virtualised computers that are dynamically provisioned and presented as one or more unified computing resources based on service-level agreements (SLA) established through negotiation between the service provider and consumers.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="types-of-cloud-computing"&gt;Types of cloud computing&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/2ioC9U8"&gt;&lt;img src="https://i.imgur.com/2ioC9U8.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt; (Software as a service ): Self- service with zero operations. Software with no installation, no patch, and operations.&lt;br/&gt;
+&lt;strong&gt;IaaS&lt;/strong&gt; (Infrastructure as a service ): Agile, on-demand infrastructure. Get things based on your business needs. Very flexible.&lt;br/&gt;
+&lt;strong&gt;PaaS&lt;/strong&gt; (Application as a service): Application-centric with integrated runtime. Building an application stack is not required.&lt;br/&gt;
+&lt;strong&gt;CaaS&lt;/strong&gt; (Container as a service): Intelligent machinery for diverse workloads. This machinery helps developers handle all types of workloads. It might not be suitable for other environments, though. Ex:- Kubernetes.&lt;br/&gt;
+&lt;strong&gt;FaaS&lt;/strong&gt; (Function as a service): Pay-per-use code used for execution only. It is used when something is running as it also makes development fast and easy. ( serverless computing ) &lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/wyvifCD"&gt;&lt;img src="https://i.imgur.com/wyvifCD.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="summary"&gt;Summary&lt;/h1&gt;
+&lt;p&gt;In a nutshell cloud computing is an SLA between vendor and enterprise, Venders like AWS, Azure.&lt;/p&gt;
+</content>
 	</entry>
 </feed>
