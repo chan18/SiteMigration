@@ -1,5 +1,6 @@
 Title: What is Cloud Computing
 Description:
+ImageUrl: https://i.imgur.com/wyvifCD.png
 Published: 05 January 2021
 Lead: A history and an introduction to cloud computing
 Tags: cloud computing

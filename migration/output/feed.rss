@@ -5,14 +5,14 @@
 		<link>/</link>
 		<description />
 		<copyright>2022</copyright>
-		<pubDate>Sun, 30 Jan 2022 15:14:23 GMT</pubDate>
-		<lastBuildDate>Sun, 30 Jan 2022 15:14:23 GMT</lastBuildDate>
+		<pubDate>Sun, 30 Jan 2022 19:11:31 GMT</pubDate>
+		<lastBuildDate>Sun, 30 Jan 2022 19:11:31 GMT</lastBuildDate>
 		<item>
 			<title>Introduction to language processing and phases of compiler Part - 2</title>
 			<link>/posts/phases-of-compiler-part-2</link>
 			<description>continuation of part 1</description>
 			<guid isPermaLink="false">/posts/phases-of-compiler-part-2</guid>
-			<pubDate>Sun, 30 Jan 2022 18:12:20 GMT</pubDate>
+			<pubDate>Sun, 30 Jan 2022 23:44:23 GMT</pubDate>
 			<content:encoded>&lt;h1 id="language-processing"&gt;Language processing&lt;/h1&gt;
 &lt;p&gt;Before we start understanding the phases of the compiler we need to have a basic understanding of automata theory.&lt;/p&gt;
 &lt;p&gt;Automata theory is the study of abstract computing devices or machines before there were computers in the late 1930s.&lt;/p&gt;
@@ -184,8 +184,9 @@ Note that all of this optimization are performed on three address instruction as
 			<title>Algorithm Analysis</title>
 			<link>/posts/algorithmanalisys</link>
 			<description>basics of algorithm Analysis.</description>
+			<enclosure url="/AlgorithmAnalysis.png" length="0" type="image" />
 			<guid isPermaLink="false">/posts/algorithmanalisys</guid>
-			<pubDate>Sun, 30 Jan 2022 18:11:29 GMT</pubDate>
+			<pubDate>Sun, 30 Jan 2022 23:23:39 GMT</pubDate>
 			<content:encoded>&lt;h1 id="introduction-to-algorithms"&gt;Introduction to algorithms&lt;/h1&gt;
 &lt;p&gt;In layman's terms An &lt;strong&gt;algorithm&lt;/strong&gt; is a set of instructions to complete a task. With well defined specification of problems with input and output.
 We can see algorithms as tools to solve well defined computational problems.&lt;/p&gt;
@@ -474,6 +475,7 @@ IL_000B:  ret
 		<item>
 			<title>Serverless Frameworks</title>
 			<link>/posts/serverlessframeworks</link>
+			<enclosure url="/ServerlessFrameworks.png" length="0" type="image" />
 			<guid isPermaLink="false">/posts/serverlessframeworks</guid>
 			<pubDate>Sun, 10 Jan 2021 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h1 id="serverless-frameworks"&gt;Serverless Frameworks.&lt;/h1&gt;
@@ -525,6 +527,32 @@ Pricing is based on the actual amount of resources consumed by an application , 
 &lt;h1 id="how-much-does-it-cost-do-you-need-serverless"&gt;How much does it cost? Do you need serverless?&lt;/h1&gt;
 &lt;p&gt;Cost estimation for your serverless function add in the requirement and it will estimate a cost for you.
 &lt;a href="http://serverlesscalc.com/"&gt;serverlesscalc.com&lt;/a&gt;, If you think you need a serverless services? Should your webapp should be a serverless? Then you can check that with the below link. &lt;a href="https://servers.lol/"&gt;servers.lol&lt;/a&gt;.&lt;/p&gt;
+</content:encoded>
+			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
+		</item>
+		<item>
+			<title>What is Cloud Computing</title>
+			<link>/posts/cloudcomputing</link>
+			<guid isPermaLink="false">/posts/cloudcomputing</guid>
+			<pubDate>Tue, 05 Jan 2021 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h1 id="what-is-cloud-computing"&gt;What is cloud computing?&lt;/h1&gt;
+&lt;p&gt;In a nutshell cloud computing allows access to a large amount of computing power in a fully virtualized manner. The aim of this technology is to deliver computing as a utility.
+Utility computing is a business model of on-demand delivery of computing power ( pay-as-you-go).&lt;/p&gt;
+&lt;p&gt;Cloud computing provides multiple services initially offered by microsoft, google and amazon based on a model where computing infrastructure is viewed as a “cloud”.&lt;/p&gt;
+&lt;p&gt;Principle of cloud computing behind this model is to offer computing, storage and software as service.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Professor Dr. Rajkumar Buyya's Cyberhome says “Cloud is a parallel and distributed computing system consisting of a collection of inter-connected and virtualised computers that are dynamically provisioned and presented as one or more unified computing resources based on service-level agreements (SLA) established through negotiation between the service provider and consumers.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="types-of-cloud-computing"&gt;Types of cloud computing&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/2ioC9U8"&gt;&lt;img src="https://i.imgur.com/2ioC9U8.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SaaS&lt;/strong&gt; (Software as a service ): Self- service with zero operations. Software with no installation, no patch, and operations.&lt;br/&gt;
+&lt;strong&gt;IaaS&lt;/strong&gt; (Infrastructure as a service ): Agile, on-demand infrastructure. Get things based on your business needs. Very flexible.&lt;br/&gt;
+&lt;strong&gt;PaaS&lt;/strong&gt; (Application as a service): Application-centric with integrated runtime. Building an application stack is not required.&lt;br/&gt;
+&lt;strong&gt;CaaS&lt;/strong&gt; (Container as a service): Intelligent machinery for diverse workloads. This machinery helps developers handle all types of workloads. It might not be suitable for other environments, though. Ex:- Kubernetes.&lt;br/&gt;
+&lt;strong&gt;FaaS&lt;/strong&gt; (Function as a service): Pay-per-use code used for execution only. It is used when something is running as it also makes development fast and easy. ( serverless computing ) &lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://imgur.com/wyvifCD"&gt;&lt;img src="https://i.imgur.com/wyvifCD.png" title="source: imgur.com" /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id="summary"&gt;Summary&lt;/h1&gt;
+&lt;p&gt;In a nutshell cloud computing is an SLA between vendor and enterprise, Venders like AWS, Azure.&lt;/p&gt;
 </content:encoded>
 			<comments xmlns="http://purl.org/rss/1.0/modules/slash/">0</comments>
 		</item>

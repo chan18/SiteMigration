@@ -3,6 +3,7 @@ Published: 16 January 2021
 Lead: Serverless use cases
 Tags: faas use cases
 IsPost: true
+ImageUrl: https://i.imgur.com/MP9vnnz.png
 By: Chandra kanth
 ---
 

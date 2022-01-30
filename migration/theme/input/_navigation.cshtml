@@ -32,16 +32,22 @@
 
   <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
 
-    <!-- navbar -->
-    <label class="block ">
-      <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
-        height="20" viewBox="0 0 20 20">
-        <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </label>
+    <div class="flex justify-between">
 
+      <a class="text-white text-xl" href="@Context.GetLink("/")"> @Context.GetString("SiteTitle") </a>
 
+      <!-- navbar -->
+      <a href="#" class="flex space-x-2 items-center mobile-menu-button">
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20"
+          height="20" viewBox="0 0 20 20">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+        <span class="text-white text-xl"> Menu </span>
+      </a>
+
+    </div>
+
+     @* hero section content *@
     <div class="bg-gray-900 py-20 pl-4 text-white block lg:hidden">
 
       <h1 class="text-5xl font-bold"> @title </h1>
@@ -55,7 +61,8 @@
 
       @if (isPost)
       {
-        <p class="text-2xl mt-4 z-50"> Published on @Document.GetDateTime(WebKeys.Published).ToLongDateString() </p>
+        <p class="text-2xl mt-4 z-50"> Published on @Document.GetDateTime(WebKeys.Published).ToLongDateString()
+        </p>
 
         <div class="mt-2">
 

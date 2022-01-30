@@ -5,6 +5,7 @@ Lead: Different types of serverless frameworks.
 Tags: faas frameworks
 IsPost: true
 By: Chandra kanth
+Image: ServerlessFrameworks.png
 ---
 
 # Serverless Frameworks.

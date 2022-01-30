@@ -51,15 +51,20 @@
 
   <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
 
-    <!-- navbar -->
-    <label class="block ">
-      <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
-        height="20" viewBox="0 0 20 20">
-        <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </label>
+    <div class="flex justify-between">
 
+      <a class="text-white text-xl" href="/"> chandu </a>
+
+      <!-- navbar -->
+      <a href="#" class="flex space-x-2 items-center mobile-menu-button">
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20"
+          height="20" viewBox="0 0 20 20">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+        <span class="text-white text-xl"> Menu </span>
+      </a>
+
+    </div>
 
     <div class="bg-gray-900 py-20 pl-4 text-white block lg:hidden">
 
@@ -82,19 +87,19 @@
 
 <ul class="lg:flex justify-end bg-gray-900">
             <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/about">about me</a>
-            </li>
-            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/resume">Resume</a>
-            </li>
-            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/videos">Videos</a>
-            </li>
-            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
                 <a class="nav-link" href="/posts">Posts</a>
             </li>
             <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
                 <a class="nav-link" href="/tags">Tags</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/about">about me</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/miscellaneous">Videos</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/resume">Resume</a>
             </li>
 </ul>
 
@@ -137,27 +142,27 @@
         <div class="lg:container lg:px-4 lg:px-0 lg:max-w-6xl mx-auto">
           <div class="p-4">
             <div id="postType">
-              
-    <span class="block text-5xl bg-gray-700 text-white p-2 m-2">2022</span>
+                  <span class="block text-5xl bg-gray-700 text-white p-2 m-2">2022</span>
         <div class="">
             <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
               <div class="flex flex-col md:flex-row md:justify-between p-4 ">
 
-                <div class="md:hidden mb-10 md:visible">
-                  <img class="object-cover rounded-md md:rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                </div>
 
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="https://i.imgur.com/o9PlA65.png" alt="Post Cover">
+                    </div>
                 <div class="">
                     <div class="flex flex-row items-center">
-                            <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg text-xs text-purple-400 font-semibold
-                            shadow-lg shadow-purple-500/50">
-                                Introduction to basic concepts
-                            </div>
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        compiler
+                    </div>
                     <span class="text-xs font-semibold">30 January 2022</span>
                 </div>
 
-                <div class="flex flex-col space-y-1 my-1">
-                    <div class="text-2xl capitalize "> Introduction to language processing and phases of compiler Part - 2 </div>
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> Introduction to language processing and phases of compiler Part - 2 </div>
+                            <span>Introduction to basic concepts</span>
                         <div class="text-sm"> <p>Before we start understanding the phases of the compiler we need to have a basic understanding of automata theory.</p> </div>
                         </div>
                         <div class="flex justify-start space-x-2 items-center mt-10">
@@ -165,16 +170,19 @@
                             shadow-lg shadow-blue-500/50">
                                 <span class="text-white">Read Full Blog</span>
                             </a>
-                            <img class=" h-8 w-8 object-cover rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
                             <div class="flex flex-row space-x-1 text-sm  font-medium">
                             <span> by </span>
                             <div>  Chandra kanth </div>
                             </div>
                         </div>
                     </div>
-                    <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block">
-                        <img class="object-cover rounded-2xl" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                    </div>
+
+
+                        <div class="min-w-0 max-w-sm  delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block shrink-0">
+                            <img class="object-cover rounded-2xl max-h-72" src="https://i.imgur.com/o9PlA65.png" alt="Post Cover">
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -182,21 +190,22 @@
             <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
               <div class="flex flex-col md:flex-row md:justify-between p-4 ">
 
-                <div class="md:hidden mb-10 md:visible">
-                  <img class="object-cover rounded-md md:rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                </div>
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="/images/AlgorithmAnalysis.png" alt="Post Cover">
+                    </div>
 
                 <div class="">
                     <div class="flex flex-row items-center">
-                            <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg text-xs text-purple-400 font-semibold
-                            shadow-lg shadow-purple-500/50">
-                                Analysis of algorithm.
-                            </div>
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        Algorithm
+                    </div>
                     <span class="text-xs font-semibold">30 January 2022</span>
                 </div>
 
-                <div class="flex flex-col space-y-1 my-1">
-                    <div class="text-2xl capitalize "> Algorithm Analysis </div>
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> Algorithm Analysis </div>
+                            <span>Analysis of algorithm.</span>
                         <div class="text-sm"> <p>In layman's terms An <strong>algorithm</strong> is a set of instructions to complete a task. With well defined specification of problems with input and output.
 We can see algorithms as tools to solve well defined computational problems.</p> </div>
                         </div>
@@ -205,16 +214,19 @@ We can see algorithms as tools to solve well defined computational problems.</p>
                             shadow-lg shadow-blue-500/50">
                                 <span class="text-white">Read Full Blog</span>
                             </a>
-                            <img class=" h-8 w-8 object-cover rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
                             <div class="flex flex-row space-x-1 text-sm  font-medium">
                             <span> by </span>
                             <div>  Chandra kanth </div>
                             </div>
                         </div>
                     </div>
-                    <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block">
-                        <img class="object-cover rounded-2xl" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                    </div>
+
+                        <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block flex-none">
+                            <img class="object-cover rounded-2xl max-h-72"  src="/images/AlgorithmAnalysis.png" alt="Post Cover">
+                        </div>
+
+
                 </div>
             </div>
         </div>
@@ -223,21 +235,22 @@ We can see algorithms as tools to solve well defined computational problems.</p>
             <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
               <div class="flex flex-col md:flex-row md:justify-between p-4 ">
 
-                <div class="md:hidden mb-10 md:visible">
-                  <img class="object-cover rounded-md md:rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                </div>
 
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="https://i.imgur.com/o5S31y2.png" alt="Post Cover">
+                    </div>
                 <div class="">
                     <div class="flex flex-row items-center">
-                            <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg text-xs text-purple-400 font-semibold
-                            shadow-lg shadow-purple-500/50">
-                                Introduction to language processing and Phases of compiler Part - 1
-                            </div>
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        compiler
+                    </div>
                     <span class="text-xs font-semibold">30 January 2021</span>
                 </div>
 
-                <div class="flex flex-col space-y-1 my-1">
-                    <div class="text-2xl capitalize "> Introduction to language processing and Phases of compiler </div>
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> Introduction to language processing and Phases of compiler </div>
+                            <span>Introduction to language processing and Phases of compiler Part - 1</span>
                         <div class="text-sm"> <p>Compiler is one of the fascinating programs that has been built ex: <a href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection">GCC</a>, it is a direct application of <a href="https://en.wikipedia.org/wiki/Automata_theory">Automata Theory</a> in source code analysis and In lame terms compilers just translate from high level language to low level language (<a href="https://en.wikipedia.org/wiki/Machine_code">Machine Level Code</a>) binary form, Which CPU can understand.</p> </div>
                         </div>
                         <div class="flex justify-start space-x-2 items-center mt-10">
@@ -245,16 +258,19 @@ We can see algorithms as tools to solve well defined computational problems.</p>
                             shadow-lg shadow-blue-500/50">
                                 <span class="text-white">Read Full Blog</span>
                             </a>
-                            <img class=" h-8 w-8 object-cover rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
                             <div class="flex flex-row space-x-1 text-sm  font-medium">
                             <span> by </span>
                             <div>  Chandra kanth </div>
                             </div>
                         </div>
                     </div>
-                    <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block">
-                        <img class="object-cover rounded-2xl" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                    </div>
+
+
+                        <div class="min-w-0 max-w-sm  delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block shrink-0">
+                            <img class="object-cover rounded-2xl max-h-72" src="https://i.imgur.com/o5S31y2.png" alt="Post Cover">
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -262,21 +278,22 @@ We can see algorithms as tools to solve well defined computational problems.</p>
             <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
               <div class="flex flex-col md:flex-row md:justify-between p-4 ">
 
-                <div class="md:hidden mb-10 md:visible">
-                  <img class="object-cover rounded-md md:rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                </div>
 
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="https://i.imgur.com/MP9vnnz.png" alt="Post Cover">
+                    </div>
                 <div class="">
                     <div class="flex flex-row items-center">
-                            <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg text-xs text-purple-400 font-semibold
-                            shadow-lg shadow-purple-500/50">
-                                Serverless use cases
-                            </div>
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        faas use cases
+                    </div>
                     <span class="text-xs font-semibold">16 January 2021</span>
                 </div>
 
-                <div class="flex flex-col space-y-1 my-1">
-                    <div class="text-2xl capitalize "> Serverless-FaaS use cases </div>
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> Serverless-FaaS use cases </div>
+                            <span>Serverless use cases</span>
                         <div class="text-sm"> <p><strong>Batch processing</strong> an offline system, Batch processing takes a large amount of data at once and runs a bunch of jobs on it, In this scenario usually, the user will not wait for any sort of response back from the server, Jobs are scheduled and run in periodically Maybe we replace expanse on extract-transform-load(ETL)</p> </div>
                         </div>
                         <div class="flex justify-start space-x-2 items-center mt-10">
@@ -284,16 +301,19 @@ We can see algorithms as tools to solve well defined computational problems.</p>
                             shadow-lg shadow-blue-500/50">
                                 <span class="text-white">Read Full Blog</span>
                             </a>
-                            <img class=" h-8 w-8 object-cover rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
                             <div class="flex flex-row space-x-1 text-sm  font-medium">
                             <span> by </span>
                             <div>  Chandra kanth </div>
                             </div>
                         </div>
                     </div>
-                    <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block">
-                        <img class="object-cover rounded-2xl" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                    </div>
+
+
+                        <div class="min-w-0 max-w-sm  delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block shrink-0">
+                            <img class="object-cover rounded-2xl max-h-72" src="https://i.imgur.com/MP9vnnz.png" alt="Post Cover">
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -301,21 +321,22 @@ We can see algorithms as tools to solve well defined computational problems.</p>
             <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
               <div class="flex flex-col md:flex-row md:justify-between p-4 ">
 
-                <div class="md:hidden mb-10 md:visible">
-                  <img class="object-cover rounded-md md:rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                </div>
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="/images/ServerlessFrameworks.png" alt="Post Cover">
+                    </div>
 
                 <div class="">
                     <div class="flex flex-row items-center">
-                            <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg text-xs text-purple-400 font-semibold
-                            shadow-lg shadow-purple-500/50">
-                                Different types of serverless frameworks.
-                            </div>
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        faas frameworks
+                    </div>
                     <span class="text-xs font-semibold">10 January 2021</span>
                 </div>
 
-                <div class="flex flex-col space-y-1 my-1">
-                    <div class="text-2xl capitalize "> Serverless Frameworks </div>
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> Serverless Frameworks </div>
+                            <span>Different types of serverless frameworks.</span>
                         <div class="text-sm"> <p>serverless frameworks that can work on any major service cloud provider like Amazon, azure, Cloudflare etc.</p> </div>
                         </div>
                         <div class="flex justify-start space-x-2 items-center mt-10">
@@ -323,16 +344,19 @@ We can see algorithms as tools to solve well defined computational problems.</p>
                             shadow-lg shadow-blue-500/50">
                                 <span class="text-white">Read Full Blog</span>
                             </a>
-                            <img class=" h-8 w-8 object-cover rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
                             <div class="flex flex-row space-x-1 text-sm  font-medium">
                             <span> by </span>
                             <div>  Chandra kanth </div>
                             </div>
                         </div>
                     </div>
-                    <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block">
-                        <img class="object-cover rounded-2xl" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                    </div>
+
+                        <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block flex-none">
+                            <img class="object-cover rounded-2xl max-h-72"  src="/images/ServerlessFrameworks.png" alt="Post Cover">
+                        </div>
+
+
                 </div>
             </div>
         </div>
@@ -340,21 +364,22 @@ We can see algorithms as tools to solve well defined computational problems.</p>
             <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
               <div class="flex flex-col md:flex-row md:justify-between p-4 ">
 
-                <div class="md:hidden mb-10 md:visible">
-                  <img class="object-cover rounded-md md:rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
-                </div>
 
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="https://i.imgur.com/YCXUF2s.png" alt="Post Cover">
+                    </div>
                 <div class="">
                     <div class="flex flex-row items-center">
-                            <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg text-xs text-purple-400 font-semibold
-                            shadow-lg shadow-purple-500/50">
-                                A introduction to FaaS
-                            </div>
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        faas
+                    </div>
                     <span class="text-xs font-semibold">09 January 2021</span>
                 </div>
 
-                <div class="flex flex-col space-y-1 my-1">
-                    <div class="text-2xl capitalize "> What is FaaS </div>
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> What is FaaS </div>
+                            <span>A introduction to FaaS</span>
                         <div class="text-sm"> <p>In simple terms serverless computing is bit sided code, unit of discrete components which does one thing in one fine life span. All the responsibilities are delegated to the service provider. Like amazon aws and microsoft azure.</p> </div>
                         </div>
                         <div class="flex justify-start space-x-2 items-center mt-10">
@@ -362,16 +387,63 @@ We can see algorithms as tools to solve well defined computational problems.</p>
                             shadow-lg shadow-blue-500/50">
                                 <span class="text-white">Read Full Blog</span>
                             </a>
-                            <img class=" h-8 w-8 object-cover rounded-full" src="https://bit.ly/3fDh6Bh" alt="office worker">
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
                             <div class="flex flex-row space-x-1 text-sm  font-medium">
                             <span> by </span>
                             <div>  Chandra kanth </div>
                             </div>
                         </div>
                     </div>
-                    <div class="min-w-0 max-w-sm delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block">
-                        <img class="object-cover rounded-2xl" src="https://bit.ly/3fDh6Bh" alt="office worker">
+
+
+                        <div class="min-w-0 max-w-sm  delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block shrink-0">
+                            <img class="object-cover rounded-2xl max-h-72" src="https://i.imgur.com/YCXUF2s.png" alt="Post Cover">
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="bg-gray-100 md:bg-gray-200 m-2 rounded-lg delay-150 hover:-translate-y-1 hover:scale-60 hover:bg-gray-800  hover:text-white hover:shadow-2xl  duration-300  relative">
+              <div class="flex flex-col md:flex-row md:justify-between p-4 ">
+
+
+                    <div class="md:hidden mb-10 md:visible">
+                        <img class="object-cover rounded-md md:rounded-full" src="https://i.imgur.com/wyvifCD.png" alt="Post Cover">
                     </div>
+                <div class="">
+                    <div class="flex flex-row items-center">
+                    <div class="mr-2 bg-pink-100 py-1 px-3 rounded-lg  text-purple-400 font-bold
+                    shadow-lg shadow-purple-500/50">
+                        cloud computing
+                    </div>
+                    <span class="text-xs font-semibold">05 January 2021</span>
+                </div>
+
+                <div class="flex flex-col space-y-1 my-1 flex-wrap">
+                        <div class="text-2xl capitalize "> What is Cloud Computing </div>
+                            <span>A history and an introduction to cloud computing</span>
+                        <div class="text-sm"> <p>In a nutshell cloud computing allows access to a large amount of computing power in a fully virtualized manner. The aim of this technology is to deliver computing as a utility.
+Utility computing is a business model of on-demand delivery of computing power ( pay-as-you-go).</p> </div>
+                        </div>
+                        <div class="flex justify-start space-x-2 items-center mt-10">
+                            <a href="/posts/cloudcomputing" class="bg-blue-600 rounded-2xl p-2 text-xs font-medium
+                            shadow-lg shadow-blue-500/50">
+                                <span class="text-white">Read Full Blog</span>
+                            </a>
+                            <img class=" h-8 w-8 object-cover rounded-full" src="authorAvathors/chandrakanth.jpg" alt="office worker">
+                            <div class="flex flex-row space-x-1 text-sm  font-medium">
+                            <span> by </span>
+                            <div>  Chandra kanth </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="min-w-0 max-w-sm  delay-150 hover:-translate-y-10 duration-300 hover:scale-100 hidden md:block shrink-0">
+                            <img class="object-cover rounded-2xl max-h-72" src="https://i.imgur.com/wyvifCD.png" alt="Post Cover">
+                        </div>
+
                 </div>
             </div>
         </div>
@@ -396,11 +468,11 @@ We can see algorithms as tools to solve well defined computational problems.</p>
        <div class="flex justify-center flex-col ">
           <p> Copyright © 2022 </p>
           <span class="flex flex-row space-x-3">
-                <a href="/feed.rss" class="flex"> 
+                <a href="/feed.rss" class="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
                 </svg>
-                  Rss Feed 
+                  Rss Feed
                 </a>
               <a href="/feed.atom" class="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

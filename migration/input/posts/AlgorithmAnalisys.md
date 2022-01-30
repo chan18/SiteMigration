@@ -3,6 +3,7 @@ Description: basics of algorithm Analysis.
 Lead: Analysis of algorithm.
 Tags: Algorithm
 IsPost: true
+Image: AlgorithmAnalysis.png
 By: Chandra kanth
 ---
 

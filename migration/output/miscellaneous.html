@@ -7,7 +7,7 @@
 
      <title>chandu - Videos</title>
 
-     <link rel="canonical" href="/videos">
+     <link rel="canonical" href="/miscellaneous">
 
          <link type="application/rss+xml" rel="alternate" href="/feed.rss" />
           <link type="application/atom+xml" rel="alternate" href="/feed.atom" />
@@ -18,7 +18,7 @@
 
   <meta property="og:title" content="chandu - Videos" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/videos" />
+  <meta property="og:url" content="/miscellaneous" />
 
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -51,15 +51,20 @@
 
   <div class="lg:hidden relative p-2 bg-gray-900" style="min-height: 50vh;">
 
-    <!-- navbar -->
-    <label class="block ">
-      <svg class="fill-current bg-gray-900 mobile-menu-button" xmlns="http://www.w3.org/2000/svg" width="20"
-        height="20" viewBox="0 0 20 20">
-        <title>menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-      </svg>
-    </label>
+    <div class="flex justify-between">
 
+      <a class="text-white text-xl" href="/"> chandu </a>
+
+      <!-- navbar -->
+      <a href="#" class="flex space-x-2 items-center mobile-menu-button">
+        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20"
+          height="20" viewBox="0 0 20 20">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+        <span class="text-white text-xl"> Menu </span>
+      </a>
+
+    </div>
 
     <div class="bg-gray-900 py-20 pl-4 text-white block lg:hidden">
 
@@ -82,19 +87,19 @@
 
 <ul class="lg:flex justify-end bg-gray-900">
             <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/about">about me</a>
-            </li>
-            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/resume">Resume</a>
-            </li>
-            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
-                <a class="nav-link" href="/videos">Videos</a>
-            </li>
-            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
                 <a class="nav-link" href="/posts">Posts</a>
             </li>
             <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
                 <a class="nav-link" href="/tags">Tags</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/about">about me</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/miscellaneous">Videos</a>
+            </li>
+            <li class="hover:bg-gray-300 hover:text-black px-5 py-3 uppercase duration-200 ease-in-out">
+                <a class="nav-link" href="/resume">Resume</a>
             </li>
 </ul>
 
@@ -201,11 +206,11 @@ src="https://www.youtube.com/watch?v=9i2LVL4i55w">
        <div class="flex justify-center flex-col ">
           <p> Copyright © 2022 </p>
           <span class="flex flex-row space-x-3">
-                <a href="/feed.rss" class="flex"> 
+                <a href="/feed.rss" class="flex">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
                 </svg>
-                  Rss Feed 
+                  Rss Feed
                 </a>
               <a href="/feed.atom" class="flex">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">

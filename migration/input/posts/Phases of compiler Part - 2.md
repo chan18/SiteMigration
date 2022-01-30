@@ -4,6 +4,7 @@ Lead: Introduction to basic concepts
 Tags: compiler
 IsPost: true
 By: Chandra kanth
+ImageUrl: https://i.imgur.com/o9PlA65.png
 ---
 
 # Language processing

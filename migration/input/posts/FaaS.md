@@ -5,6 +5,7 @@ Lead: A introduction to FaaS
 Tags: faas
 IsPost: true
 By: Chandra kanth
+ImageUrl: https://i.imgur.com/YCXUF2s.png
 ---
 
 # What is serverless cloud computing ?

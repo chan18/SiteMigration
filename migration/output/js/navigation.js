@@ -4,6 +4,6 @@
 
  // add our event listener for the click
  btn.addEventListener("click", () => {
-     sidebar.classList.toggle("my-8");
+     sidebar.classList.toggle("my-9");
      sidebar.classList.toggle("-translate-y-full");
  });

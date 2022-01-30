@@ -5,6 +5,7 @@ Lead: Introduction to language processing and Phases of compiler Part - 1
 Tags: compiler
 IsPost: true
 By: Chandra kanth
+ImageUrl: https://i.imgur.com/o5S31y2.png
 ---
 
 Compiler is one of the fascinating programs that has been built ex: [GCC](https://en.wikipedia.org/wiki/GNU_Compiler_Collection), it is a direct application of [Automata Theory](https://en.wikipedia.org/wiki/Automata_theory) in source code analysis and In lame terms compilers just translate from high level language to low level language ([Machine Level Code](https://en.wikipedia.org/wiki/Machine_code)) binary form, Which CPU can understand.
