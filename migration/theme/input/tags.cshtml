@@ -12,32 +12,32 @@ ArchiveTitle: => GetString("GroupKey")
 ---
 @if (Document.ContainsKey(Keys.GroupKey))
 {
-    <div class="container-sm-height">
-        <div class="row row-sm-height">
-            <div class="col-md-6 right-border col-sm-height">
-                @Html.Partial("/_posts.cshtml", Document)
-            </div>
-            <div class="col-md-4 mt-4 mt-md-0 col-sm-height">
+    <div class="">
+        <div class="">
+            <div class="py-4 flex flex-wrap">
 
                 @foreach (IDocument tag in OutputPages
-                                           .Get("tags.html")
-                                           .GetChildren()
-                                           .OrderByDescending(x => x.GetChildren().Count()))
+                                        .Get("tags.html")
+                                        .GetChildren()
+                                        .OrderByDescending(x => x.GetChildren().Count()))
                 {
                     string badgeStyle = Document
-                                        .GetString(Keys.GroupKey)
-                                        .Equals(tag.GetTitle(), StringComparison.OrdinalIgnoreCase) ? "shadow-lg shadow-gray-500/50 scale-100 translate-y-10" : "hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:translate-y-10";
+                                    .GetString(Keys.GroupKey)
+                                    .Equals(tag.GetTitle(), StringComparison.OrdinalIgnoreCase) ? 
+                                    "shadow-lg shadow-gray-500/50 scale-100 -translate-y-2" 
+                                    : 
+                                    "hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:-translate-y-2";
 
                     string postCount = tag
-                                        .GetChildren()
-                                        .Count()
-                                        .ToString();
+                                    .GetChildren()
+                                    .Count()
+                                    .ToString();
 
-                    <a href="@Context.GetLink(tag)" class=""> 
+                    <a href="@Context.GetLink(tag)" class="shrink-0 flex py-2">
                         <span class="mr-2 py-1 px-3 rounded-lg
-                                    font-bold text-black bg-gray-200
-                                    delay-150 duration-300
-                                    hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:translate-y-10 @badgeStyle">
+                    font-bold text-black bg-gray-200
+                    delay-150 duration-300
+                    hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:-translate-y-2 @badgeStyle">
                              <span class="">
                                  @tag.GetTitle()
                             </span>
@@ -49,41 +49,41 @@ ArchiveTitle: => GetString("GroupKey")
                 }
 
             </div>
+
+            <div class="col-md-6 right-border col-sm-height">
+                @Html.Partial("/_posts.cshtml", Document)
+            </div>
+
         </div>
     </div>
 }
 else
 {
-    @foreach (IDocument tag in Document.GetChildren().OrderByDescending(x => x.GetChildren().Count()))
-    {
-        string postCount = tag.GetChildren().Count().ToString();
+    <div class="flex flex-wrap">
+        @foreach (IDocument tag in Document
+                                    .GetChildren()
+                                    .OrderByDescending(x => x.GetChildren()
+                                    .Count()))
+        {
+            string postCount = tag
+                                .GetChildren()
+                                .Count()
+                                .ToString();
 
-        <a role="button" href="@Context.GetLink(tag)">
-            <span class="mr-2 py-1 px-3 rounded-lg
-                font-bold text-black bg-gray-200
-                delay-150 duration-300
-                hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:translate-y-10">
-                <span class="">
-                 @tag.GetTitle()
+            <a role="button" href="@Context.GetLink(tag)" class="shrink-0 flex py-2">
+                <span class="mr-2 py-1 px-3 rounded-lg
+                    font-bold text-black bg-gray-200
+                    delay-150 duration-300
+                    hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:-translate-y-2">
+                    <span class="">
+                        @tag.GetTitle()
+                    </span>
+                    <span class="bg-gray-300 p-1">
+                        (@postCount)
+                    </span>
                 </span>
-                 <span class="bg-gray-300 p-1">
-                 (@postCount)
-                </span>
-            </span>
-        </a>
-    }
+            </a>
 
-    <a role="button" href="">
-            <span class="mr-2 py-1 px-3 rounded-lg
-                font-bold text-black bg-gray-200
-                delay-150 duration-300
-                hover:shadow-lg hover:shadow-gray-500/50 hover:scale-100 hover:translate-y-10">
-                 <span class="">
-                     Algorithms
-                 </span>
-                 <span class=" bg-gray-300 p-1">
-                     10
-                 </span>
-            </span>
-     </a>
+        }
+    </div>
 }
